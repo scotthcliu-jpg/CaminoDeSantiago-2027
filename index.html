@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐚 2027 聖年朝聖之路全攻略 | 6月2–16日</title>
+<style>
+:root {
+  --red: #B8314F;
+  --gold: #D4900A;
+  --green: #1E6B45;
+  --purple: #6B3FA0;
+  --cream: #FBF8F3;
+  --white: #FFFFFF;
+  --dark: #1A1A1A;
+  --gray: #5C5C5C;
+  --lgray: #888;
+  --border: #E0DDD8;
+  --light: #F2EEE8;
+  --shadow: 0 2px 12px rgba(0,0,0,0.09);
+  --shadow-sm: 0 1px 6px rgba(0,0,0,0.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',-apple-system,'PingFang TC','Noto Sans TC',sans-serif;background:var(--cream);color:var(--dark);line-height:1.65;font-size:15px}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(145deg,#8B1A2F 0%,#B8314F 45%,#7A3000 100%);color:#fff;padding:44px 20px 34px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-icon{font-size:52px;margin-bottom:10px;display:block}
+.hero h1{font-size:26px;font-weight:800;letter-spacing:-0.5px;margin-bottom:6px}
+.hero .sub{font-size:15px;opacity:.82;margin-bottom:22px}
+.pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+.pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600}
+
+/* ── Tabs ── */
+.tab-nav{display:flex;background:var(--white);border-bottom:2px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex:none;padding:13px 18px;background:none;border:none;border-bottom:3px solid transparent;font-size:13.5px;font-weight:700;color:var(--gray);cursor:pointer;white-space:nowrap;transition:.2s;letter-spacing:.3px}
+.tab-btn:hover{color:var(--red);background:#FFF5F7}
+.tab-btn.active{color:var(--red);border-bottom-color:var(--red)}
+
+/* ── Layout ── */
+.tab{display:none;padding:22px 16px 40px;max-width:860px;margin:0 auto;animation:fadeIn .25s ease}
+.tab.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Section titles ── */
+.sec{font-size:17px;font-weight:800;color:var(--red);margin:28px 0 14px;padding-bottom:7px;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:7px}
+.sec:first-child{margin-top:4px}
+
+/* ── Alert boxes ── */
+.alert{border-radius:10px;padding:14px 16px;margin-bottom:16px;border-left:4px solid}
+.alert-red{background:#FEF2F2;border-color:var(--red)}
+.alert-gold{background:#FFFBEB;border-color:var(--gold)}
+.alert-green{background:#ECFDF5;border-color:var(--green)}
+.alert-ttl{font-size:13.5px;font-weight:800;margin-bottom:5px}
+.alert-red .alert-ttl{color:#991B1B}
+.alert-gold .alert-ttl{color:#78350F}
+.alert-green .alert-ttl{color:#065F46}
+.alert-body{font-size:13px;line-height:1.7}
+.alert-red .alert-body{color:#7F1D1D}
+.alert-gold .alert-body{color:#6B3F00}
+.alert-green .alert-body{color:#064E3B}
+
+/* ── Timeline ── */
+.tl-item{display:flex;gap:14px;margin-bottom:4px}
+.tl-left{flex:none;width:52px;display:flex;flex-direction:column;align-items:center}
+.tl-date{font-size:11px;font-weight:800;color:var(--lgray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.tl-dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;position:relative;z-index:1;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.tl-line{flex:1;width:2px;background:var(--border);min-height:14px;margin:2px auto}
+.tl-right{flex:1;padding-bottom:16px}
+.tl-card{background:var(--white);border-radius:10px;padding:15px 17px;box-shadow:var(--shadow-sm)}
+.tl-card-ttl{font-size:15px;font-weight:800;margin-bottom:3px}
+.tl-card-sub{font-size:12.5px;color:var(--lgray);margin-bottom:8px}
+.tl-card p{font-size:13px;color:var(--gray);line-height:1.7}
+.tl-card .tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11.5px;padding:3px 9px;border-radius:5px;background:var(--light);color:var(--gray)}
+
+/* Dot colors */
+.d-fly{background:#6366F1}.d-mad{background:var(--red)}.d-train{background:#0891B2}
+.d-walk{background:var(--green)}.d-goal{background:var(--purple)}.d-trip{background:#D97706}.d-ret{background:#6B7280}
+
+/* Badges */
+.badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:12px;white-space:nowrap;flex-shrink:0}
+.b-red{background:#FEE2E2;color:#991B1B}.b-green{background:#D1FAE5;color:#065F46}
+.b-gold{background:#FEF3C7;color:#78350F}.b-purple{background:#EDE9FE;color:#5B21B6}
+.b-blue{background:#DBEAFE;color:#1E40AF}
+.tl-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
+
+/* ── Hotel cards ── */
+.hotel-card{background:var(--white);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:14px;border-left:4px solid var(--gold)}
+.hotel-card.camino{border-left-color:var(--green)}
+.hotel-card.santiago{border-left-color:var(--purple)}
+.h-loc{font-size:11.5px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.h-loc.camino{color:var(--green)}.h-loc.santiago{color:var(--purple)}
+.h-name{font-size:16px;font-weight:800;margin-bottom:3px}
+.h-price{font-size:14px;font-weight:700;color:var(--green);margin-bottom:10px}
+.h-ul{list-style:none}.h-ul li{font-size:13px;color:var(--gray);padding:2px 0}
+.h-ul li::before{content:"✓ ";color:var(--green)}
+.h-backup{margin-top:13px;padding-top:13px;border-top:1px dashed var(--border);font-size:13px;color:var(--gray)}
+.h-backup-ttl{font-size:11px;font-weight:800;color:var(--lgray);text-transform:uppercase;margin-bottom:5px}
+.h-opt-sep{border-top:1px dashed var(--border);margin:14px 0}
+
+/* ── Food ── */
+.food-item{display:flex;gap:13px;padding:14px 16px;background:var(--white);border-radius:10px;margin-bottom:10px;box-shadow:var(--shadow-sm)}
+.food-icon{font-size:28px;flex:none;line-height:1}
+.food-name{font-size:14.5px;font-weight:800;margin-bottom:3px}
+.food-desc{font-size:13px;color:var(--gray);line-height:1.6}
+.food-where{font-size:12px;color:var(--red);margin-top:5px;font-weight:700}
+
+/* ── Transport ── */
+.tsp-step{display:flex;gap:14px;padding:15px 16px;background:var(--white);border-radius:10px;margin-bottom:11px;box-shadow:var(--shadow-sm)}
+.tsp-icon{font-size:26px;flex:none;width:36px;text-align:center;line-height:1.2}
+.tsp-title{font-size:14.5px;font-weight:800;margin-bottom:4px}
+.tsp-detail{font-size:13px;color:var(--gray);line-height:1.65}
+.tsp-hl{display:inline-block;margin-top:7px;font-size:12.5px;font-weight:700;color:var(--red);background:#FEF2F2;padding:3px 10px;border-radius:6px}
+
+/* ── Route / Map ── */
+.map-wrap{border-radius:12px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px}
+.map-wrap iframe{width:100%;height:370px;border:none;display:block}
+
+/* KM chart */
+.km-chart{margin:14px 0 22px}
+.km-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.km-lbl{font-size:12px;color:var(--gray);width:130px;flex:none}
+.km-track{flex:1;background:var(--light);border-radius:5px;height:22px;overflow:hidden}
+.km-bar{height:100%;background:var(--green);border-radius:5px;display:flex;align-items:center;padding-left:8px;transition:width .9s ease}
+.km-bar span{font-size:11.5px;color:#fff;font-weight:800;white-space:nowrap}
+.km-bar.long{background:var(--red)}
+.km-bar.finish{background:var(--purple)}
+
+/* Stage table */
+.stage-tbl{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);font-size:13px}
+.stage-tbl th{background:var(--red);color:#fff;padding:11px 14px;text-align:left;font-size:12.5px}
+.stage-tbl td{padding:11px 14px;border-bottom:1px solid var(--border)}
+.stage-tbl tr:last-child td{border-bottom:none}
+.stage-tbl tr:nth-child(even) td{background:#FAFAFA}
+.km-val{font-weight:800;color:var(--green)}
+.depart-warn{font-weight:800;color:var(--red)}
+
+/* Tips */
+.tip{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid var(--gold);border-radius:9px;padding:13px 15px;margin-bottom:12px}
+.tip-ttl{font-size:13.5px;font-weight:800;color:#78350F;margin-bottom:5px}
+.tip-body{font-size:13px;color:#6B3F00;line-height:1.7}
+
+/* Rhythm table */
+.rhythm-tbl{width:100%;font-size:13px}
+.rhythm-tbl td{padding:8px 0;vertical-align:top;border-bottom:1px solid var(--border)}
+.rhythm-tbl td:first-child{width:88px;font-weight:800;color:var(--green);padding-right:12px}
+.rhythm-tbl tr:last-child td{border-bottom:none}
+
+/* SVG route */
+.route-svg-wrap{background:var(--white);border-radius:12px;padding:20px 16px;box-shadow:var(--shadow);margin-bottom:20px;overflow-x:auto}
+
+/* Footer */
+footer{text-align:center;padding:28px 20px;font-size:12.5px;color:var(--lgray);border-top:1px solid var(--border);margin-top:10px}
+footer strong{color:var(--red)}
+
+/* Responsive */
+@media(max-width:600px){
+  .hero h1{font-size:21px}
+  .pill{font-size:12px;padding:4px 11px}
+  .tab-btn{padding:11px 14px;font-size:12.5px}
+  .stage-tbl th,.stage-tbl td{padding:9px 10px;font-size:12px}
+  .km-lbl{width:100px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ HERO ══════ -->
+<header class="hero">
+  <span class="hero-icon">🐚</span>
+  <h1>2027 聖年聖雅各朝聖之路</h1>
+  <p class="sub">Camino de Santiago · 優雅慢活全攻略 · 二人同行</p>
+  <div class="pills">
+    <span class="pill">📅 6月2–16日（15天）</span>
+    <span class="pill">🥾 114.7 km 徒步</span>
+    <span class="pill">✝️ 2027 聖年</span>
+    <span class="pill">🏨 8 站住宿</span>
+  </div>
+</header>
+
+<!-- ══════ TAB NAV ══════ -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('itinerary',this)">📅 每日行程</button>
+  <button class="tab-btn" onclick="showTab('hotel',this)">🏨 住宿</button>
+  <button class="tab-btn" onclick="showTab('food',this)">🍽 特色餐飲</button>
+  <button class="tab-btn" onclick="showTab('transport',this)">🚆 交通</button>
+  <button class="tab-btn" onclick="showTab('route',this)">🗺 徒步路線</button>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     TAB 1：每日行程
+══════════════════════════════════════════════ -->
+<div id="itinerary" class="tab active">
+
+  <div class="alert alert-red">
+    <div class="alert-ttl">🔴 立即行動：2027 聖年住宿必須提前搶訂</div>
+    <div class="alert-body">2027年7月25日（聖雅各節）落在星期六，為正式聖年，全年朝聖人數比普通年多 40–60%。<strong>Parador de Santiago 現在就要上 parador.es 排候補或搶訂</strong>；沿途朝聖路旅館建議 2026 年底前完成預訂。</div>
+  </div>
+
+  <div class="sec">📅 2027年6月2日－16日 全程行程</div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/2</div>
+      <div class="tl-dot d-fly">✈️</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 1 ── 台北出發</div><span class="badge b-purple">飛行</span></div>
+        <div class="tl-card-sub">桃園機場 → 馬德里（MAD）· 長途約14–18小時含轉機</div>
+        <p>建議搭土耳其航空（伊斯坦堡轉）、國泰航空（香港轉）或阿聯酋航空。機上多喝水調整時差，西班牙時間比台灣慢6–7小時（夏令）。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/3</div>
+      <div class="tl-dot d-mad">🏙</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 2 ── 抵達馬德里</div><span class="badge b-red">馬德里</span></div>
+        <div class="tl-card-sub">Crisol Vía Castellana · 查馬丁區四星商務</div>
+        <p>T4 航廈搭 Cercanías 3站（11分鐘）直達查馬丁車站，或固定費率 €33 官方計程車。飯店步行5–8分鐘。步行4分鐘有 Mercadona 超市，補給朝聖零食。<br><br>🎯 今日任務：調時差、輕食、超市採購補給品。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/4</div>
+      <div class="tl-dot d-mad">🏛</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 3 ── 馬德里精華慢遊</div><span class="badge b-red">馬德里</span></div>
+        <div class="tl-card-sub">保留腳力，優雅觀光</div>
+        <p>早上社區咖啡廳：熱拿鐵＋西班牙烘蛋（Tortilla）。搭5號或27號公車進市中心（信用卡感應）。下午逛累可直接叫 Uber 回飯店，將腳力留給朝聖之路。</p>
+        <div class="tags">
+          <span class="tag">☕ 社區咖啡廳早餐</span>
+          <span class="tag">🏛 Plaza Mayor 主廣場</span>
+          <span class="tag">🍫 San Ginés 油條沾巧克力</span>
+          <span class="tag">🥘 San Miguel 市場 Tapas</span>
+          <span class="tag">🌳 麗池公園 Retiro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/5</div>
+      <div class="tl-dot d-train">🚄</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 4 ── 高鐵直奔朝聖起點 Sarria</div><span class="badge b-blue">移動日</span></div>
+        <div class="tl-card-sub">查馬丁 13:20 → Sarria 17:32 · 唯一直達 · 4h12m</div>
+        <p>12:00退房，步行至查馬丁車站搭唯一直達高鐵。抵達步行6–8分鐘達 Hotel Alfonso IX（Camino正線上）。<br><br>🎯 今晚任務：取得朝聖護照（Credencial）加蓋第一個圖章、下載 Pilbeo App 設定行李托運。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/6</div>
+      <div class="tl-dot d-walk">🥾</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 5 ── 徒步 Day 1：Sarria → Portomarín</div><span class="badge b-green">徒步</span></div>
+        <div class="tl-card-sub">22.2 km · 預估 5.5–6.5 小時 · 出發 07:15</div>
+        <p>前段多為樹林上坡，進城前走下一段石階梯並跨越 Belesar 水庫長橋，景觀震撼。預計 13:30–14:00 抵達。<br>🏨 <strong>Hotel Vistalegre</strong>（廣場旁，下樓就是餐廳街）</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/7</div>
+      <div class="tl-dot d-walk">🥾</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 6 ── 徒步 Day 2：Portomarín → Palas de Rei</div><span class="badge b-red">全程最長⚡</span></div>
+        <div class="tl-card-sub">24.0 km · 預估 6.0–7.0 小時 · ⚠ 提早 06:45 出發！</div>
+        <p>全程最長一天，必須提早避免午後受熱。連續緩上坡至 Sierra de Ligonde，隨後平緩鄉間小徑。預計 14:00–15:00 抵達。<br>🏨 <strong>Pension San Marcos</strong>（Camino 正線，下樓就是路）</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/8</div>
+      <div class="tl-dot d-walk">🐙</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 7 ── 徒步 Day 3：Palas de Rei → Melide（章魚大餐日！）</div><span class="badge b-green">輕鬆段</span></div>
+        <div class="tl-card-sub">15.0 km · 預估 3.5–4.5 小時 · 出發 07:30</div>
+        <p>穿越松樹林與中世紀石橋，中午前即可抵達。下午大吃加利西亞章魚！<br>🐙 <strong>Pulpería Ezequiel</strong> 或 <strong>Pulpería A Garnacha</strong>（步行3–5分鐘），配 Ribeiro 白酒，是全程最精彩的一餐！<br>🏨 <strong>Hotel Lux Melide</strong>（Camino 正線）</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/9</div>
+      <div class="tl-dot d-walk">🧀</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 8 ── 徒步 Day 4：Melide → Arzúa（起司小鎮）</div><span class="badge b-green">輕鬆段</span></div>
+        <div class="tl-card-sub">14.0 km · 預估 3.5–4.0 小時 · 出發 07:30</div>
+        <p>穿越尤加利樹林，連續輕微上下坡，距離最短。中午前抵達起司小鎮 Arzúa，下午在 1930 Boutique Hotel 後花園喝咖啡、配新鮮 Queso de Arzúa 起司。<br>🏨 <strong>1930 Boutique Hotel</strong>（清潔度9.9分）或 <strong>HOTEL ARZÚA</strong>（CP值首選）</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/10</div>
+      <div class="tl-dot d-walk">🥾</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 9 ── 徒步 Day 5：Arzúa → O Pedrouzo</div><span class="badge b-green">徒步</span></div>
+        <div class="tl-card-sub">19.5 km · 預估 5.0–5.5 小時 · 出發 07:15</div>
+        <p>多穿越尤加利樹林，起伏緩和。明日即到終點聖地亞哥，今晚早點休息、好好補眠！<br>🏨 <strong>Hotel O POBA</strong>（核心正線，北歐簡約風，步行2分鐘有超市藥局）</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/11</div>
+      <div class="tl-dot d-goal">🏆</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card" style="border-left:3px solid var(--purple)">
+        <div class="tl-head"><div class="tl-card-ttl">Day 10 ── 徒步 Day 6：O Pedrouzo → 聖地亞哥 🎉 榮耀終點！</div><span class="badge b-purple">抵達終點</span></div>
+        <div class="tl-card-sub">20.0 km · 預估 5.0–5.5 小時 · 出發 07:00</div>
+        <p>緩上坡至 Monte do Gozo（歡喜山）遠眺大教堂高塔，隨後一路下坡進聖城。<br><br>🎯 <strong>進城任務：</strong><br>① 直奔朝聖者辦公室（Rúa de Carretas 33）取 <strong>Compostela 證書</strong>（提前App取號）<br>② 18:30前進教堂卡位 <strong>19:30彌撒</strong>，爭取看 Botafumeiro 巨型銀香爐搖擺<br>③ 慶功晚宴：大章魚＋淡菜＋烤蝦＋Albariño 白酒，舉杯：「我們做到了！」</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/12</div>
+      <div class="tl-dot d-trip">🌊</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 11 ── 世界盡頭 Finisterre + Muxía 一日遊</div><span class="badge b-gold">一日遊</span></div>
+        <div class="tl-card-sub">09:00出發 → 18:30返回 · 只動眼不動腿！</div>
+        <p>坐專車欣賞大西洋海岸：Muxía 神蹟聖母教堂 → Finisterre「0公里」路標打卡合照 → 海濱小鎮海鮮午餐。可在 <strong>GetYourGuide / Klook</strong> 提前訂，或前一天在老街旅行社報名。約 €30–45/人。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/13</div>
+      <div class="tl-dot d-goal">🏛</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 12 ── 舊城最優雅慢活</div><span class="badge b-purple">聖地亞哥</span></div>
+        <div class="tl-card-sub">Botafumeiro 保險 + 海鮮市場 + 拱廊老街</div>
+        <p>若昨日未看到銀香爐，<strong>10:30前進教堂卡位12:00彌撒（雙重保險！）</strong><br><br>下午慢遊：Mercado de Abastos 代客料理午餐 → Alameda 公園大教堂觀景台 → 拱廊老街逛手工銀飾 → 廣場咖啡廳看新朝聖者入城哭泣。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/14</div>
+      <div class="tl-dot d-goal">🛍</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 13 ── 最後採買與深度告別</div><span class="badge b-purple">聖地亞哥</span></div>
+        <div class="tl-card-sub">伴手禮採購 · 最後晚餐</div>
+        <p>伴手禮：<strong>Tarta de Santiago 杏仁蛋糕</strong>、聖雅各十字銀飾、Albariño 白酒（可裝行李）。<br>最後晚餐首選 <strong>A Tafona</strong>（米其林推薦，人均€50–70，需提前訂位）或 <strong>O Dezaseis</strong>（傳統海鮮，人均€25–35）。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/15</div>
+      <div class="tl-dot d-train">🚄</div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 14 ── 高鐵返回馬德里</div><span class="badge b-blue">移動日</span></div>
+        <div class="tl-card-sub">Santiago → 查馬丁 · 三班可選</div>
+        <p>計程車5–7分鐘（€7–10）到高鐵站。班次：<br>🚄 <strong>10:49 → 14:15</strong>（3h 26m）<br>🚄 <strong>15:26 → 18:51</strong>（3h 25m）<br>🚄 <strong>18:05 → 21:07</strong>（3h 2m）<br><br>返回 Crisol Vía Castellana，附近用晚餐。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-left">
+      <div class="tl-date">6/16</div>
+      <div class="tl-dot d-fly">✈️</div>
+      <div style="height:0"></div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-card">
+        <div class="tl-head"><div class="tl-card-ttl">Day 15 ── 馬德里飛台北，平安返家</div><span class="badge b-purple">返台</span></div>
+        <div class="tl-card-sub">MAD → TPE · Buen Camino!</div>
+        <p>帶著 114.7 公里的記憶和 Compostela 榮譽證書，平安返家。</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /itinerary -->
+
+<!-- ══════════════════════════════════════════════
+     TAB 2：住宿
+══════════════════════════════════════════════ -->
+<div id="hotel" class="tab">
+  <div class="alert alert-gold">
+    <div class="alert-ttl">⏰ 訂房時機</div>
+    <div class="alert-body">Parador de Santiago → 立即行動（候補/搶訂）｜朝聖路旅館 → 2026年底前訂好｜馬德里旅館 → 2027年2月前訂</div>
+  </div>
+
+  <div class="sec">🏙️ 馬德里（Day 2–3 + Day 14 回程）</div>
+  <div class="hotel-card">
+    <div class="h-loc">馬德里 · 查馬丁區</div>
+    <div class="h-name">Crisol Vía Castellana ⭐⭐⭐⭐</div>
+    <div class="h-price">高性價比商務四星</div>
+    <ul class="h-ul">
+      <li>距查馬丁車站步行 5–8 分鐘，路面平整好拉行李</li>
+      <li>步行 4 分鐘有 Mercadona / Dia 大型超市，補給朝聖用品</li>
+      <li>地址：Paseo de la Castellana, 220, 28046 Madrid</li>
+    </ul>
+  </div>
+
+  <div class="sec">🌿 朝聖之路 Camino（6晚）</div>
+
+  <div class="hotel-card camino">
+    <div class="h-loc camino">Day 4（6/5）· Sarria · ✅ Camino 正線</div>
+    <div class="h-name">Hotel Alfonso IX ⭐⭐⭐</div>
+    <div class="h-price">約 NT$3,476（含歐式自助早餐）</div>
+    <ul class="h-ul">
+      <li>就在 Camino 路線正線上，出門即踏上朝聖路</li>
+      <li>距 Sarria 火車站步行 6–8 分鐘（路平好走）</li>
+      <li>後方緊鄰河畔景觀步道</li>
+      <li>步行 1–3 分鐘有高評價朝聖者餐廳</li>
+    </ul>
+    <div class="h-backup"><div class="h-backup-ttl">備案</div><strong>Hotel Duerming Villa de Sarria</strong> ── 乾淨、獨立衛浴、高 CP 值</div>
+  </div>
+
+  <div class="hotel-card camino">
+    <div class="h-loc camino">Day 5（6/6）· Portomarín · ✅ Camino 穿越廣場</div>
+    <div class="h-name">Hotel Vistalegre ⭐⭐⭐</div>
+    <div class="h-price">約 NT$3,414（含精緻自助早餐）</div>
+    <ul class="h-ul">
+      <li>小鎮中心廣場旁，Camino 直接穿越廣場（等於正線）</li>
+      <li>現代化三星、房間新穎乾淨、獨立衛浴</li>
+      <li>下樓就是最熱鬧的餐廳街</li>
+    </ul>
+    <div class="h-backup"><div class="h-backup-ttl">精品升級備案</div><strong>Pazo de Berbetoros</strong>（約 NT$4,764）── 歷史莊園改建，中世紀朝聖氛圍，沉靜感滿分</div>
+  </div>
+
+  <div class="hotel-card camino">
+    <div class="h-loc camino">Day 6（6/7）· Palas de Rei · ✅ Camino 正線</div>
+    <div class="h-name">Pension San Marcos</div>
+    <div class="h-price">約 NT$2,500–3,200</div>
+    <ul class="h-ul">
+      <li>座落在朝聖之路幹道正線上，出門就是 Camino</li>
+      <li>設備新穎不輸星級飯店，一塵不染</li>
+      <li>附設溫馨早餐吧</li>
+    </ul>
+    <div class="h-backup"><div class="h-backup-ttl">美食體驗備案</div><strong>Complejo Lalinense</strong>（約 NT$2,300–3,000）── 當地老牌餐廳，走完24公里直接下樓享用道地西班牙烤肉</div>
+  </div>
+
+  <div class="hotel-card camino">
+    <div class="h-loc camino">Day 7（6/8）· Melide · ✅ 進城主幹道</div>
+    <div class="h-name">Hotel Lux Melide</div>
+    <div class="h-price">約 NT$2,800–3,800（含景觀餐廳早餐）</div>
+    <ul class="h-ul">
+      <li>座落進城主幹道正線上</li>
+      <li>大水量高規格獨立衛浴</li>
+      <li>步行 3–5 分鐘達核心「章魚名店街」（Pulpería Ezequiel）</li>
+      <li>附溫馨景觀餐廳自助早餐</li>
+    </ul>
+    <div class="h-backup"><div class="h-backup-ttl">備案</div><strong>Pensión Berenguela</strong>（約 NT$1,800–2,500）── Hotel Lux 姊妹民宿，靜謐巷弄，早餐可在 Hotel Lux 景觀餐廳享用</div>
+  </div>
+
+  <div class="hotel-card camino">
+    <div class="h-loc camino">Day 8（6/9）· Arzúa（起司小鎮）· ✅ Camino 正線</div>
+    <div class="h-name">🥇 首選：1930 Boutique Hotel</div>
+    <div class="h-price">約 NT$4,000–5,500（高水準現做早餐）</div>
+    <ul class="h-ul">
+      <li>1930 年代精緻莊園老宅改建</li>
+      <li>清潔度 9.9 分（全路線最高評分！）</li>
+      <li>極美後花園與中庭，洗澡後花園喝咖啡是最幸福時刻</li>
+    </ul>
+    <div class="h-backup">
+      <div class="h-backup-ttl">CP值首選</div>
+      <strong>HOTEL ARZÚA</strong>（約 NT$3,000–4,200）── Camino 正線正門迎客，四星商務等級，水壓強，豐盛自助早<br><br>
+      <strong>La Puerta de Arzúa · Hotel</strong>（約 NT$2,500–3,500）── 2022年全新，極安靜
+    </div>
+  </div>
+
+  <div class="hotel-card camino">
+    <div class="h-loc camino">Day 9（6/10）· O Pedrouzo · ✅ 核心正線</div>
+    <div class="h-name">Hotel O POBA</div>
+    <div class="h-price">約 NT$3,200–4,500（含豐盛自助早餐）</div>
+    <ul class="h-ul">
+      <li>直接座落在進入小鎮的核心正線上</li>
+      <li>步行 2 分鐘：超市、藥局、3–4 家高評價餐館</li>
+      <li>北歐簡約風精品，蓮蓬頭水壓大且熱水充足</li>
+      <li>自助早餐有加利西亞烘蛋與起司</li>
+    </ul>
+    <div class="h-backup"><div class="h-backup-ttl">鄉村精品備案</div><strong>Hotel Rural O Acivro</strong>（約 NT$2,800–3,800）── 石造鄉村別墅，高評價餐廳，中庭晚餐極美</div>
+  </div>
+
+  <div class="sec">✝️ 聖地亞哥（Day 10–13，3晚）── 三選一</div>
+  <div class="hotel-card santiago">
+    <div class="h-loc santiago">Day 10–13（6/11–14）· Santiago de Compostela</div>
+
+    <div class="h-name">🥇 Option A：Parador de Santiago ⭐⭐⭐⭐⭐</div>
+    <div class="h-price">約 NT$10,906（含頂級自助早餐）──「一生必住一次的史詩古蹟」</div>
+    <ul class="h-ul">
+      <li>0公尺神級位置：直接座落在大教堂正前方廣場旁</li>
+      <li>15世紀「朝聖者皇家醫院」改建，全球歷史最悠久旅館</li>
+      <li>內部中庭絕美，退房計程車5分鐘達高鐵站</li>
+      <li style="color:var(--red);font-weight:700">⚡ 立即上 parador.es 查詢2027年6月訂房！</li>
+    </ul>
+
+    <div class="h-opt-sep"></div>
+    <div class="h-name">🥈 Option B：San Francisco Hotel Monumento ⭐⭐⭐⭐</div>
+    <div class="h-price">約 NT$5,070（含高水準現做早餐）</div>
+    <ul class="h-ul">
+      <li>距大教堂僅 150 公尺（步行 3 分鐘）</li>
+      <li>18世紀修道院改建，石牆天井極具神聖感</li>
+      <li>台灣高端朝聖團的首選</li>
+    </ul>
+
+    <div class="h-opt-sep"></div>
+    <div class="h-name">🥉 Option C：Hotel Eurostars Araguaney ⭐⭐⭐⭐⭐</div>
+    <div class="h-price">約 NT$4,798（含五星自助早餐）──「現代舒適與交通首選」</div>
+    <ul class="h-ul">
+      <li>步行 8–10 分鐘到大教堂</li>
+      <li>步行 10–12 分鐘到高鐵站（帶行李最方便！）</li>
+      <li>步行 2 分鐘有頂級超市 Supercor 買伴手禮</li>
+    </ul>
+  </div>
+</div><!-- /hotel -->
+
+<!-- ══════════════════════════════════════════════
+     TAB 3：特色餐飲
+══════════════════════════════════════════════ -->
+<div id="food" class="tab">
+
+  <div class="sec">🏙️ 馬德里（Day 2–4）</div>
+
+  <div class="food-item">
+    <div class="food-icon">🍫</div>
+    <div>
+      <div class="food-name">Churros con Chocolate（油條沾熱巧克力）</div>
+      <div class="food-desc">1894年老店 San Ginés，24小時營業，馬德里最經典早餐，暖胃必吃，每份約 €4–6</div>
+      <div class="food-where">📍 Chocolatería San Ginés · Plaza Mayor 旁巷內</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🥘</div>
+    <div>
+      <div class="food-name">Tapas 午餐（各式西班牙小食）</div>
+      <div class="food-desc">百年玻璃鐵骨市集，站在攤位邊試遍海鮮、火腿、起司各種 Tapas，搭配 Cava 氣泡酒</div>
+      <div class="food-where">📍 Mercado de San Miguel · Plaza Mayor 旁</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🍳</div>
+    <div>
+      <div class="food-name">Tortilla de Patatas（馬鈴薯烘蛋）</div>
+      <div class="food-desc">西班牙早餐靈魂食物，咖啡廳點一片 Pinchos de Tortilla 配熱拿鐵，約 €1.5–3</div>
+      <div class="food-where">📍 飯店附近任一社區傳統咖啡廳</div>
+    </div>
+  </div>
+
+  <div class="sec">🌿 朝聖之路沿途</div>
+
+  <div class="food-item">
+    <div class="food-icon">🥖</div>
+    <div>
+      <div class="food-name">Bocadillo（法棍三明治）</div>
+      <div class="food-desc">朝聖者的隨行能量來源，火腿、起司、鮪魚等選擇，每份 €2–4，沿途每個村莊都有</div>
+      <div class="food-where">📍 朝聖路沿途各村莊 Bar（掛咖啡壺招牌的地方）</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🍽️</div>
+    <div>
+      <div class="food-name">Menú Peregrino（朝聖者套餐）</div>
+      <div class="food-desc">€10–14 三道菜：湯/沙拉＋主食＋甜點，附麵包與一瓶葡萄酒，全程最划算用餐方式</div>
+      <div class="food-where">📍 沿途各小鎮餐廳，掛有「Menú Peregrino」招牌</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🐙</div>
+    <div>
+      <div class="food-name">Pulpo a la Gallega（加利西亞章魚）⭐ 全程 No.1 必吃</div>
+      <div class="food-desc">煮熟章魚切片鋪木盤，灑橄欖油、煙燻紅椒粉、海鹽。配 Ribeiro 白酒，一生難忘的味道</div>
+      <div class="food-where">📍 Pulpería Ezequiel / Pulpería A Garnacha（Melide，Day 7）</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🧀</div>
+    <div>
+      <div class="food-name">Queso de Arzúa（阿爾蘇亞新鮮軟起司）</div>
+      <div class="food-desc">小農製作的新鮮軟質起司，入口即化，溫潤奶香。在起司小鎮現做現吃，人生體驗</div>
+      <div class="food-where">📍 Arzúa（Day 8）任一咖啡館或當地市集</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🍷</div>
+    <div>
+      <div class="food-name">Albariño 白酒（加利西亞在地白葡萄酒）</div>
+      <div class="food-desc">加利西亞最著名的白葡萄酒，清爽微酸，配海鮮絕配，每杯 €3–8，是整趟旅途的靈魂飲品</div>
+      <div class="food-where">📍 沿途任何 Bar 或餐廳，Santiago 各海鮮館</div>
+    </div>
+  </div>
+
+  <div class="sec">✝️ 聖地亞哥 · 慶功宴必吃</div>
+
+  <div class="food-item">
+    <div class="food-icon">🦪</div>
+    <div>
+      <div class="food-name">Percebe（藤壺 / 龍爪）</div>
+      <div class="food-desc">加利西亞海岸頂級珍饈，外型如龍爪，鮮甜無比，白水燙熟即食，是當地人的驕傲，€15–25/份</div>
+      <div class="food-where">📍 Mercado de Abastos 代客料理 / Santiago 各海鮮館</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🍥</div>
+    <div>
+      <div class="food-name">Vieiras（扇貝）── 朝聖之路的象徵</div>
+      <div class="food-desc">扇貝殼正是朝聖者標誌！烤扇貝肉質鮮甜嫩滑，搭配青醬或蒜香奶油，€8–15/份</div>
+      <div class="food-where">📍 Santiago 任一海鮮餐廳</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🍰</div>
+    <div>
+      <div class="food-name">Tarta de Santiago（聖地亞哥杏仁蛋糕）── 最佳伴手禮</div>
+      <div class="food-desc">表面有聖雅各十字的杏仁粉蛋糕，甜而不膩，是最有代表性的伴手禮，€3–8/片，整個約€12–18</div>
+      <div class="food-where">📍 舊城區老街任何麵包糕點店</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🏪</div>
+    <div>
+      <div class="food-name">Mercado de Abastos 代客料理體驗</div>
+      <div class="food-desc">全西班牙第二大傳統市場，在攤位挑選最肥美竹蟶、干貝或大蝦，讓攤主現煎現烤，配 Albariño 當午餐，人均 €20–30</div>
+      <div class="food-where">📍 Santiago Mercado de Abastos（距大教堂步行5分鐘）</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">⭐</div>
+    <div>
+      <div class="food-name">A Tafona ── 慶功晚宴首選（需提前訂位）</div>
+      <div class="food-desc">米其林推薦，主廚 Lucía Freitas 的現代加利西亞料理，精緻詮釋在地食材，最完美的慶功宴場地，人均 €50–70</div>
+      <div class="food-where">📍 Rúa da Virxe da Cerca, Santiago · 務必提前訂位</div>
+    </div>
+  </div>
+
+  <div class="food-item">
+    <div class="food-icon">🦐</div>
+    <div>
+      <div class="food-name">O Dezaseis ── 當地人的傳統海鮮館</div>
+      <div class="food-desc">在地居民愛去的餐廳，大份量道地加利西亞海鮮，CP 值極高，人均 €25–35</div>
+      <div class="food-where">📍 Santiago de Compostela 舊城區</div>
+    </div>
+  </div>
+
+</div><!-- /food -->
+
+<!-- ══════════════════════════════════════════════
+     TAB 4：交通
+══════════════════════════════════════════════ -->
+<div id="transport" class="tab">
+
+  <div class="sec">✈️ 國際航班（TPE ↔ MAD）</div>
+  <div class="tsp-step">
+    <div class="tsp-icon">✈️</div>
+    <div>
+      <div class="tsp-title">台北桃園（TPE）→ 馬德里巴拉哈斯（MAD）</div>
+      <div class="tsp-detail">推薦：土耳其航空（伊斯坦堡轉）、國泰航空（香港轉）、阿聯酋航空（杜拜轉）<br>飛行時間約 14–18 小時含轉機，可選擇夜間航班利用飛行時間調整時差</div>
+      <span class="tsp-hl">建議 2026 年底前訂票，聖年旺季機票漲幅明顯</span>
+    </div>
+  </div>
+
+  <div class="sec">🏙️ 馬德里機場 → 飯店</div>
+  <div class="tsp-step">
+    <div class="tsp-icon">🚆</div>
+    <div>
+      <div class="tsp-title">Option A：Cercanías 接駁火車（推薦）</div>
+      <div class="tsp-detail">T4 航廈地下層搭車，3站約 11 分鐘直達查馬丁車站（Chamartín），飯店步行 5–8 分鐘</div>
+      <span class="tsp-hl">€2.6/人，最快最省</span>
+    </div>
+  </div>
+  <div class="tsp-step">
+    <div class="tsp-icon">🚕</div>
+    <div>
+      <div class="tsp-title">Option B：官方計程車（行李多時推薦）</div>
+      <div class="tsp-detail">T4 大門口固定費率計程車，直達市區任何飯店，不需打表，安全有保障</div>
+      <span class="tsp-hl">固定費率 €33</span>
+    </div>
+  </div>
+
+  <div class="sec">🚄 馬德里 → Sarria（高鐵，6/5）</div>
+  <div class="tsp-step">
+    <div class="tsp-icon">🚄</div>
+    <div>
+      <div class="tsp-title">查馬丁（Chamartín）→ Sarria · 唯一直達班次</div>
+      <div class="tsp-detail">
+        <strong>出發：13:20 ／ 抵達：17:32</strong>（車程 4 小時 12 分鐘）<br>
+        唯一不需換車的直達班次，兩人帶大行李免受風吹雨淋換乘之苦
+      </div>
+      <span class="tsp-hl">Renfe 高鐵約 €35–55/人，提前購票有早鳥優惠</span>
+    </div>
+  </div>
+
+  <div class="sec">🧳 朝聖期間：行李托運（Day 5–10 每日使用）</div>
+  <div class="tsp-step">
+    <div class="tsp-icon">📦</div>
+    <div>
+      <div class="tsp-title">Pilbeo / CaminoFácil App 行李托運</div>
+      <div class="tsp-detail">
+        <strong>步驟：</strong>前晚 21:00 前在 App 下單 → 隔日 07:00 前行李放飯店門口 → 到目的地旅館等待領取<br>
+        <strong>行李標籤：</strong>每件必須貼好「今日住宿旅館名 → 明日住宿旅館名」（App 提供）<br>
+        <strong>隨身攜帶：</strong>輕量日背包 8–10L，裝水（1L）、零食、輕薄雨衣、護照、手機
+      </div>
+      <span class="tsp-hl">每人每袋 €7–10，朝聖路上最值得花的錢</span>
+    </div>
+  </div>
+  <div class="alert alert-green">
+    <div class="alert-ttl">💡 行李托運訣竅</div>
+    <div class="alert-body">若住宿有保險箱，貴重物品（護照影本、備用信用卡）可鎖箱內，只帶正本護照與現金出發。每件行李箱建議上鎖（TSA 鎖）。Correos（西班牙郵局）也有類似托運服務，€6–8/袋。</div>
+  </div>
+
+  <div class="sec">🌊 Finisterre + Muxía 一日遊（6/12）</div>
+  <div class="tsp-step">
+    <div class="tsp-icon">🚌</div>
+    <div>
+      <div class="tsp-title">世界盡頭專車一日遊</div>
+      <div class="tsp-detail">
+        09:00 從聖地亞哥出發 → Muxía → Finisterre「0公里」路標 → 海鮮午餐 → 18:30–19:00 返回<br>
+        可在 <strong>GetYourGuide</strong> / <strong>Klook</strong> 提前訂，或前一天在 Rúa do Vilar 老街旅行社現場報名
+      </div>
+      <span class="tsp-hl">約 €30–45/人（含中英語解說）</span>
+    </div>
+  </div>
+
+  <div class="sec">🚄 Santiago → 馬德里（回程，6/15）</div>
+  <div class="tsp-step">
+    <div class="tsp-icon">🚄</div>
+    <div>
+      <div class="tsp-title">聖地亞哥 → 查馬丁 · 三班次可選</div>
+      <div class="tsp-detail">
+        🚄 <strong>10:49 → 14:15</strong>（3h 26m）── 早到馬德里，下午可市區閒逛<br>
+        🚄 <strong>15:26 → 18:51</strong>（3h 25m）── 悠閒早餐後再出發<br>
+        🚄 <strong>18:05 → 21:07</strong>（3h 2m）── 充分利用最後半天在聖城<br><br>
+        到高鐵站：從飯店叫計程車，約 5–7 分鐘，€7–10
+      </div>
+      <span class="tsp-hl">建議選 10:49 或 15:26 班次，到馬德里有足夠時間休息備隔日長途飛行</span>
+    </div>
+  </div>
+
+  <div class="sec">🏙️ 馬德里市區交通（Day 3）</div>
+  <div class="tsp-step">
+    <div class="tsp-icon">🚌</div>
+    <div>
+      <div class="tsp-title">市區公車（5號 / 27號）</div>
+      <div class="tsp-detail">從飯店往南到市中心，信用卡或 Apple Pay 直接感應，到西貝萊斯廣場或普拉多博物館附近下車</div>
+      <span class="tsp-hl">€1.5/人 · 最輕鬆的觀光方式</span>
+    </div>
+  </div>
+  <div class="tsp-step">
+    <div class="tsp-icon">🚕</div>
+    <div>
+      <div class="tsp-title">計程車 / Uber</div>
+      <div class="tsp-detail">車頂亮綠燈即可攔截，或用 Uber App，逛累了直接回飯店不需硬撐，將體力留給朝聖之路</div>
+      <span class="tsp-hl">市區短程約 €8–15</span>
+    </div>
+  </div>
+
+</div><!-- /transport -->
+
+<!-- ══════════════════════════════════════════════
+     TAB 5：徒步路線與地圖
+══════════════════════════════════════════════ -->
+<div id="route" class="tab">
+
+  <div class="map-wrap">
+    <iframe
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-8.65%2C42.68%2C-7.20%2C42.98&layer=cyclemap"
+      title="Camino Francés：Sarria to Santiago de Compostela"
+      allowfullscreen loading="lazy">
+    </iframe>
+  </div>
+  <p style="font-size:12px;color:var(--lgray);text-align:center;margin-bottom:22px">地圖範圍：Sarria（右/東）→ Santiago de Compostela（左/西）· 黃色即 Camino 徒步路線 · 資料來源：OpenStreetMap CycloSM</p>
+
+  <!-- SVG Route Diagram -->
+  <div class="route-svg-wrap">
+    <p style="font-size:13px;font-weight:700;color:var(--gray);margin-bottom:14px;text-align:center">📍 路線段落一覽（Sarria → Santiago，114.7 km）</p>
+    <svg viewBox="0 0 700 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:500px">
+      <!-- main line -->
+      <line x1="50" y1="50" x2="650" y2="50" stroke="#D0C8BE" stroke-width="3"/>
+      <!-- segments colored -->
+      <line x1="50"  y1="50" x2="185" y2="50" stroke="#1E6B45" stroke-width="4"/>
+      <line x1="185" y1="50" x2="335" y2="50" stroke="#B8314F" stroke-width="4"/>
+      <line x1="335" y1="50" x2="425" y2="50" stroke="#1E6B45" stroke-width="4"/>
+      <line x1="425" y1="50" x2="510" y2="50" stroke="#1E6B45" stroke-width="4"/>
+      <line x1="510" y1="50" x2="585" y2="50" stroke="#1E6B45" stroke-width="4"/>
+      <line x1="585" y1="50" x2="650" y2="50" stroke="#6B3FA0" stroke-width="4"/>
+      <!-- dots -->
+      <circle cx="50"  cy="50" r="7" fill="#1E6B45"/>
+      <circle cx="185" cy="50" r="7" fill="#1E6B45"/>
+      <circle cx="335" cy="50" r="7" fill="#B8314F"/>
+      <circle cx="425" cy="50" r="7" fill="#1E6B45"/>
+      <circle cx="510" cy="50" r="7" fill="#1E6B45"/>
+      <circle cx="585" cy="50" r="7" fill="#1E6B45"/>
+      <circle cx="650" cy="50" r="9" fill="#6B3FA0"/>
+      <!-- labels top -->
+      <text x="50"  y="32" text-anchor="middle" font-size="10" fill="#1E6B45" font-weight="bold">Sarria</text>
+      <text x="185" y="32" text-anchor="middle" font-size="9"  fill="#444">Portomarín</text>
+      <text x="335" y="32" text-anchor="middle" font-size="9"  fill="#444">Palas de Rei</text>
+      <text x="425" y="32" text-anchor="middle" font-size="9"  fill="#444">Melide</text>
+      <text x="510" y="32" text-anchor="middle" font-size="9"  fill="#444">Arzúa</text>
+      <text x="585" y="32" text-anchor="middle" font-size="9"  fill="#444">O Pedrouzo</text>
+      <text x="650" y="32" text-anchor="middle" font-size="10" fill="#6B3FA0" font-weight="bold">Santiago</text>
+      <!-- km below -->
+      <text x="117" y="72" text-anchor="middle" font-size="9" fill="#1E6B45">22.2 km</text>
+      <text x="260" y="72" text-anchor="middle" font-size="9" fill="#B8314F" font-weight="bold">24.0 km ⚡</text>
+      <text x="380" y="72" text-anchor="middle" font-size="9" fill="#1E6B45">15.0 km</text>
+      <text x="467" y="72" text-anchor="middle" font-size="9" fill="#1E6B45">14.0 km</text>
+      <text x="547" y="72" text-anchor="middle" font-size="9" fill="#1E6B45">19.5 km</text>
+      <text x="617" y="72" text-anchor="middle" font-size="9" fill="#6B3FA0">20.0 km</text>
+    </svg>
+  </div>
+
+  <div class="sec">📊 每日公里數</div>
+  <div class="km-chart">
+    <div class="km-row">
+      <div class="km-lbl">6/6 Sarria→Portom.</div>
+      <div class="km-track"><div class="km-bar" style="width:92.5%"><span>22.2 km</span></div></div>
+    </div>
+    <div class="km-row">
+      <div class="km-lbl">6/7 Portom.→Palas</div>
+      <div class="km-track"><div class="km-bar long" style="width:100%"><span>24.0 km ⚡ 最長</span></div></div>
+    </div>
+    <div class="km-row">
+      <div class="km-lbl">6/8 Palas→Melide</div>
+      <div class="km-track"><div class="km-bar" style="width:62.5%"><span>15.0 km</span></div></div>
+    </div>
+    <div class="km-row">
+      <div class="km-lbl">6/9 Melide→Arzúa</div>
+      <div class="km-track"><div class="km-bar" style="width:58.3%"><span>14.0 km</span></div></div>
+    </div>
+    <div class="km-row">
+      <div class="km-lbl">6/10 Arzúa→Pedrouzo</div>
+      <div class="km-track"><div class="km-bar" style="width:81.3%"><span>19.5 km</span></div></div>
+    </div>
+    <div class="km-row">
+      <div class="km-lbl">6/11 Pedrouzo→SCQ 🏆</div>
+      <div class="km-track"><div class="km-bar finish" style="width:83.3%"><span>20.0 km</span></div></div>
+    </div>
+  </div>
+  <div style="text-align:center;background:var(--white);border-radius:10px;padding:14px;margin-bottom:22px;box-shadow:var(--shadow-sm)">
+    <span style="font-size:26px;font-weight:800;color:var(--green)">114.7 km</span>
+    <span style="font-size:13px;color:var(--lgray);margin-left:8px">6天完成 · Camino Francés 最後一段</span>
+  </div>
+
+  <div class="sec">📋 每日徒步詳細資訊</div>
+  <table class="stage-tbl">
+    <thead>
+      <tr><th>日期</th><th>段落</th><th>距離</th><th>出發</th><th>預計到達</th><th>地形重點</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6/6</td>
+        <td>Sarria → Portomarín</td>
+        <td class="km-val">22.2 km</td>
+        <td>07:15</td>
+        <td>13:30–14:00</td>
+        <td>前段樹林上坡，進城跨越 Belesar 長橋</td>
+      </tr>
+      <tr>
+        <td>6/7</td>
+        <td>Portomarín → Palas de Rei</td>
+        <td class="km-val" style="color:var(--red)">24.0 km ⚡</td>
+        <td class="depart-warn">06:45 ⚠</td>
+        <td>14:00–15:00</td>
+        <td>緩上坡至 Sierra Ligonde，平緩鄉間小徑</td>
+      </tr>
+      <tr>
+        <td>6/8</td>
+        <td>Palas de Rei → Melide</td>
+        <td class="km-val">15.0 km</td>
+        <td>07:30</td>
+        <td>12:00–13:00</td>
+        <td>松樹林＋中世紀石橋，中午前輕鬆到達</td>
+      </tr>
+      <tr>
+        <td>6/9</td>
+        <td>Melide → Arzúa</td>
+        <td class="km-val">14.0 km</td>
+        <td>07:30</td>
+        <td>12:00–12:30</td>
+        <td>尤加利樹林，輕微上下坡（全程最短！）</td>
+      </tr>
+      <tr>
+        <td>6/10</td>
+        <td>Arzúa → O Pedrouzo</td>
+        <td class="km-val">19.5 km</td>
+        <td>07:15</td>
+        <td>13:00–13:30</td>
+        <td>尤加利樹林為主，起伏比前一天緩和</td>
+      </tr>
+      <tr>
+        <td>6/11</td>
+        <td>O Pedrouzo → Santiago 🏆</td>
+        <td class="km-val" style="color:var(--purple)">20.0 km</td>
+        <td>07:00</td>
+        <td>13:00–13:30</td>
+        <td>緩上坡至歡喜山（Monte do Gozo），下坡進聖城</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sec">⏰ 每日最佳作息節奏</div>
+  <div style="background:var(--white);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:20px">
+    <table class="rhythm-tbl" style="width:100%;font-size:13px">
+      <tr><td>06:30</td><td>起床、輕食（飯店早餐或前晚備好的麵包）</td></tr>
+      <tr><td>07:00–07:30</td><td>出發（Day 6 提早至06:45）</td></tr>
+      <tr><td>10:00–10:30</td><td>途中 Bar 休息：咖啡＋Bocadillo，讓腳透氣10分鐘</td></tr>
+      <tr><td>13:00–14:00</td><td>目標抵達住宿，放行李盥洗</td></tr>
+      <tr><td>14:00–16:00</td><td>午休 90 分鐘（加利西亞 Siesta，恢復體力黃金時段）</td></tr>
+      <tr><td>16:00–18:30</td><td>輕鬆散步鎮上、喝咖啡、找晚餐餐廳</td></tr>
+      <tr><td>19:30–21:00</td><td>晚餐（西班牙人的正常晚餐時間）</td></tr>
+      <tr><td>21:30</td><td>Pilbeo App 下單隔日行李托運、隔日路線確認、就寢</td></tr>
+    </table>
+  </div>
+
+  <div class="sec">💡 達人重要提醒</div>
+
+  <div class="tip">
+    <div class="tip-ttl">🦵 膝蓋保護（最重要！）</div>
+    <div class="tip-body">下坡比上坡更傷膝蓋。務必使用<strong>折疊登山杖</strong>（全程必備），下坡時換Z字形橫向走法，放慢速度。Sarria→Portomarín 進城前有長段石階梯，務必握好杖配速。</div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-ttl">☔ 加利西亞的雨（必備雨具）</div>
+    <div class="tip-body">加利西亞是西班牙最多雨地區，6月仍有陣雨（Galician drizzle）。必備：<strong>輕量雨披</strong>（比雨傘實用，可罩住背包）＋背包防水套＋防水登山鞋或鞋套。淋雨走路最容易起水泡。</div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-ttl">🦶 水泡預防（出發前每天做）</div>
+    <div class="tip-body">出發前在腳跟、腳趾縫等摩擦點貼 <strong>Leukoplast 運動肌貼</strong>，塗 <strong>Body Glide 防磨膏</strong>。萬一起水泡，用 <strong>Compeed 水泡貼</strong>（勿刺破）可繼續走。建議出發前 3 個月開始穿登山鞋磨合，至少走 50+ 公里。</div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-ttl">📱 必裝 App</div>
+    <div class="tip-body">
+      <strong>Buen Camino</strong> ── 最佳 Camino GPS 導航，離線可用，必裝<br>
+      <strong>Gronze</strong> ── 詳細段落資訊、住宿、海拔圖<br>
+      <strong>Pilbeo / CaminoFácil</strong> ── 行李托運，每晚21:00前下單<br>
+      <strong>Google Maps</strong> ── 提前下載加利西亞離線地圖<br>
+      <strong>oficinadelperegrino.com</strong> ── 朝聖者辦公室線上取號碼牌（聖年必備！）
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <div class="alert-ttl">⚡ 2027 聖年特別注意</div>
+    <div class="alert-body">
+      <strong>Compostela 證書領取：</strong>聖年人流比普通年份多60%，排隊可能 2–3 小時。請提前在官方 App 取線上號碼牌。<br><br>
+      <strong>朝聖者彌撒搶位：</strong>12:00 及 19:30 彌撒聖年人潮翻倍，需提前 <strong>90 分鐘</strong>（10:30 / 18:00前）入教堂卡位，否則警衛拉封鎖線禁止進場。<br><br>
+      <strong>Botafumeiro（巨型銀香爐）：</strong>聖年期間搖擺機率達80%+，進場前可向工作人員詢問當天是否有慶典。若第一次未看到，Day 12 可再試一次12:00彌撒。
+    </div>
+  </div>
+
+</div><!-- /route -->
+
+<footer>
+  <p>🐚 <strong>2027 聖年聖雅各朝聖之路</strong> · Camino de Santiago · Buen Camino!</p>
+  <p style="margin-top:6px">行程日期：2027年6月2日–16日 · 路線：Sarria → Santiago de Compostela（114.7 km）</p>
+  <p style="margin-top:6px;font-size:11.5px">地圖資料 © OpenStreetMap contributors</p>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: document.querySelector('.tab-nav').offsetTop - 2, behavior:'smooth'});
+}
+</script>
+</body>
+</html>
