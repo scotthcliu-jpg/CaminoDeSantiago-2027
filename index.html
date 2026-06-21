@@ -159,13 +159,90 @@ body{font-family:'Segoe UI',-apple-system,'PingFang TC','Noto Sans TC',sans-seri
 footer{text-align:center;padding:28px 20px;font-size:12.5px;color:var(--lgray);border-top:1px solid var(--border);margin-top:10px}
 footer strong{color:var(--red)}
 
-/* Responsive */
-@media(max-width:600px){
-  .hero h1{font-size:21px}
-  .pill{font-size:12px;padding:4px 11px}
-  .tab-btn{padding:11px 14px;font-size:12.5px}
-  .stage-tbl th,.stage-tbl td{padding:9px 10px;font-size:12px}
-  .km-lbl{width:100px}
+/* ─── RWD ─── */
+.hero-icon svg{width:100px;height:100px;display:block;margin:0 auto}
+
+/* 小手機 (<480px) */
+@media(max-width:479px){
+  .hero{padding:30px 14px 24px}
+  .hero-icon svg{width:70px;height:70px}
+  .hero h1{font-size:19px}
+  .hero .sub{font-size:13px}
+  .pill{font-size:11px;padding:3px 9px}
+  .tab-btn{padding:8px 10px;font-size:11.5px}
+  .stage-tbl th,.stage-tbl td{padding:7px 8px;font-size:11.5px}
+  .km-lbl{width:82px;font-size:10.5px}
+}
+
+/* 平板 (≥768px) */
+@media(min-width:768px){
+  body{font-size:16px}
+  .hero{padding:56px 48px 44px}
+  .hero-icon svg{width:130px;height:130px}
+  .hero h1{font-size:34px}
+  .hero .sub{font-size:17px}
+  .pill{font-size:14px;padding:7px 18px}
+  .pills{gap:12px}
+  .tab-nav{padding:12px 28px;gap:10px}
+  .tab-btn{padding:11px 22px;font-size:14px}
+  .tab{padding:28px 32px 64px;max-width:960px}
+  .sec{font-size:19px;margin:32px 0 16px;padding-bottom:9px}
+  .tl-card{padding:18px 20px}
+  .tl-card-ttl{font-size:16px}
+  .tl-card p{font-size:14px}
+  .hotel-card{padding:22px 26px}
+  .h-name{font-size:17px}
+  .h-price{font-size:15px}
+  .h-ul li{font-size:14px}
+  .h-backup{font-size:14px}
+  .food-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .food-item{margin-bottom:0}
+  .food-name{font-size:15.5px}
+  .food-desc{font-size:14px}
+  .alert-body{font-size:14px}
+  .alert-ttl{font-size:14.5px}
+  .map-wrap iframe{height:460px}
+  .km-lbl{width:160px;font-size:13px}
+  .km-bar{height:26px}
+  .km-bar span{font-size:12.5px}
+  .stage-tbl{font-size:14px}
+  .stage-tbl th,.stage-tbl td{padding:12px 16px}
+  .tip-ttl{font-size:14.5px}
+  .tip-body{font-size:14px}
+  .tsp-step{padding:18px 20px}
+  .tsp-title{font-size:16px}
+  .tsp-detail{font-size:14px}
+  .tsp-hl{font-size:13px}
+  .rhythm-tbl td{font-size:14px;padding:10px 0}
+  .rhythm-tbl td:first-child{width:110px}
+  .tag{font-size:12.5px;padding:4px 11px}
+}
+
+/* 筆電 (≥1024px) */
+@media(min-width:1024px){
+  body{font-size:16.5px}
+  .hero{padding:80px 80px 64px}
+  .hero-icon svg{width:160px;height:160px}
+  .hero h1{font-size:44px;letter-spacing:-1px}
+  .hero .sub{font-size:20px}
+  .pill{font-size:15px;padding:9px 24px}
+  .tab-nav{padding:14px 40px;gap:14px}
+  .tab-btn{padding:13px 30px;font-size:15.5px}
+  .tab{padding:40px 48px 100px;max-width:1200px}
+  .sec{font-size:22px}
+  .tl-item{gap:18px}
+  .tl-left{width:60px}
+  .tl-dot{width:40px;height:40px;font-size:18px}
+  .tl-card-ttl{font-size:17px}
+  .tl-card p{font-size:15px}
+  .h-name{font-size:18px}
+  .map-wrap iframe{height:540px}
+  .km-lbl{width:200px}
+  .stage-tbl{font-size:15px}
+  .stage-tbl th,.stage-tbl td{padding:14px 20px}
+  .food-name{font-size:16.5px}
+  .food-desc{font-size:15px}
+  .food-icon{font-size:32px}
 }
 
 /* ══════════════════════════════════════════════
@@ -679,7 +756,7 @@ footer strong{color:var(--red)}
 <div id="food" class="tab">
 
   <div class="sec">🏙️ 馬德里（Day 2–4）</div>
-
+<div class="food-grid">
   <div class="food-item">
     <div class="food-icon">🍫</div>
     <div>
@@ -706,9 +783,10 @@ footer strong{color:var(--red)}
       <div class="food-where">📍 飯店附近任一社區傳統咖啡廳</div>
     </div>
   </div>
+</div><!-- /food-grid -->
 
   <div class="sec">🌿 朝聖之路沿途</div>
-
+<div class="food-grid">
   <div class="food-item">
     <div class="food-icon">🥖</div>
     <div>
@@ -753,9 +831,10 @@ footer strong{color:var(--red)}
       <div class="food-where">📍 沿途任何 Bar 或餐廳，Santiago 各海鮮館</div>
     </div>
   </div>
+</div><!-- /food-grid -->
 
   <div class="sec">✝️ 聖地亞哥 · 慶功宴必吃</div>
-
+<div class="food-grid">
   <div class="food-item">
     <div class="food-icon">🦪</div>
     <div>
@@ -809,6 +888,7 @@ footer strong{color:var(--red)}
       <div class="food-where">📍 Santiago de Compostela 舊城區</div>
     </div>
   </div>
+</div><!-- /food-grid -->
 
 </div><!-- /food -->
 
