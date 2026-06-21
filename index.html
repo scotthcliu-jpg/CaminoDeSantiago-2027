@@ -167,9 +167,67 @@ footer strong{color:var(--red)}
   .stage-tbl th,.stage-tbl td{padding:9px 10px;font-size:12px}
   .km-lbl{width:100px}
 }
+
+/* ══════════════════════════════════════════════
+   深色主題 Dark Mode
+══════════════════════════════════════════════ */
+[data-theme="dark"]{
+  --cream: #0D0F1C;
+  --white: #161929;
+  --dark: #DDE3F5;
+  --gray: #8B96B5;
+  --lgray: #596285;
+  --border: #242845;
+  --light: #1A1E33;
+  --shadow: 0 2px 16px rgba(0,0,0,0.45);
+  --shadow-sm: 0 1px 8px rgba(0,0,0,0.35);
+  --red: #E05070;
+  --gold: #E8A820;
+  --green: #2ECC80;
+  --purple: #9B6FD8;
+}
+[data-theme="dark"] body{background:var(--cream)}
+[data-theme="dark"] .tab-nav{background:#111325;border-color:var(--border);box-shadow:0 2px 12px rgba(0,0,0,.4)}
+[data-theme="dark"] .tab-btn:hover{background:rgba(224,80,112,.1)}
+[data-theme="dark"] .tl-card{background:var(--white);border:1px solid var(--border)}
+[data-theme="dark"] .hotel-card{background:var(--white);border-color:var(--border)}
+[data-theme="dark"] .hotel-card:not(.camino):not(.santiago){border-left-color:var(--gold)}
+[data-theme="dark"] .food-item{background:var(--white);border:1px solid var(--border)}
+[data-theme="dark"] .tsp-step{background:var(--white);border:1px solid var(--border)}
+[data-theme="dark"] .stage-tbl{background:var(--white)}
+[data-theme="dark"] .stage-tbl tr:nth-child(even) td{background:#1C1F35}
+[data-theme="dark"] .stage-tbl td{border-color:var(--border)}
+[data-theme="dark"] .route-svg-wrap{background:var(--white);border:1px solid var(--border)}
+[data-theme="dark"] .km-track{background:var(--light)}
+[data-theme="dark"] .tip{background:#1A1810;border-color:#4A3A00}
+[data-theme="dark"] .tip-ttl{color:var(--gold)}
+[data-theme="dark"] .tip-body{color:#BBA060}
+[data-theme="dark"] .alert-red{background:#1F0D12;border-color:var(--red)}
+[data-theme="dark"] .alert-red .alert-ttl{color:#F28095}
+[data-theme="dark"] .alert-red .alert-body{color:#C8808E}
+[data-theme="dark"] .alert-gold{background:#1A1508;border-color:var(--gold)}
+[data-theme="dark"] .alert-gold .alert-ttl{color:var(--gold)}
+[data-theme="dark"] .alert-gold .alert-body{color:#BBA060}
+[data-theme="dark"] .alert-green{background:#081810;border-color:var(--green)}
+[data-theme="dark"] .alert-green .alert-ttl{color:var(--green)}
+[data-theme="dark"] .alert-green .alert-body{color:#6BBFA0}
+[data-theme="dark"] .tag{background:var(--light);color:var(--gray)}
+[data-theme="dark"] .h-backup{border-color:var(--border);color:var(--gray)}
+[data-theme="dark"] .h-opt-sep{border-color:var(--border)}
+[data-theme="dark"] .rhythm-tbl td{border-color:var(--border)}
+[data-theme="dark"] footer{border-color:var(--border)}
+[data-theme="dark"] .map-wrap{box-shadow:0 2px 16px rgba(0,0,0,.5)}
+
+/* ══ 切換按鈕 ══ */
+.theme-toggle{position:fixed;bottom:24px;right:20px;z-index:999;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 14px rgba(0,0,0,.25);transition:background .3s,transform .2s;background:#fff;color:#333}
+.theme-toggle:hover{transform:scale(1.1)}
+[data-theme="dark"] .theme-toggle{background:#1E2340;color:#DDE3F5;box-shadow:0 3px 14px rgba(0,0,0,.5)}
 </style>
 </head>
 <body>
+
+<!-- ══ 深/淺色切換按鈕 ══ -->
+<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" title="切換深色／淺色模式">🌙</button>
 
 <!-- ══════ HERO ══════ -->
 <header class="hero">
@@ -1044,6 +1102,22 @@ function showTab(id, btn) {
   btn.classList.add('active');
   window.scrollTo({top: document.querySelector('.tab-nav').offsetTop - 2, behavior:'smooth'});
 }
+
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('camino-theme', next);
+}
+
+(function() {
+  const saved = localStorage.getItem('camino-theme') || 'light';
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('themeBtn').textContent = '☀️';
+  }
+})();
 </script>
 </body>
 </html>
