@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📖 旅行手冊 | 朝聖之路 2027</title>
+<style>
+:root {
+  --red: #B8314F;
+  --gold: #D4900A;
+  --green: #1E6B45;
+  --purple: #6B3FA0;
+  --blue: #0891B2;
+  --cream: #FBF8F3;
+  --white: #FFFFFF;
+  --dark: #1A1A1A;
+  --gray: #5C5C5C;
+  --lgray: #888;
+  --border: #E0DDD8;
+  --light: #F2EEE8;
+  --shadow: 0 2px 12px rgba(0,0,0,0.09);
+  --shadow-sm: 0 1px 6px rgba(0,0,0,0.07);
+  --bg: var(--cream);
+  --card-bg: var(--white);
+  --text: var(--dark);
+  --text-sub: var(--gray);
+  --border-color: var(--border);
+}
+[data-theme="dark"] {
+  --bg: #0D0F1C;
+  --card-bg: #141828;
+  --text: #E8E8F0;
+  --text-sub: #9DA3BA;
+  --border-color: #2A2E45;
+  --light: #1A1E33;
+  --cream: #0D0F1C;
+  --white: #141828;
+  --dark: #E8E8F0;
+  --gray: #9DA3BA;
+  --lgray: #6B7280;
+  --border: #2A2E45;
+  --shadow: 0 2px 12px rgba(0,0,0,0.4);
+  --shadow-sm: 0 1px 6px rgba(0,0,0,0.3);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',-apple-system,'PingFang TC','Noto Sans TC',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; font-size:15px; transition:background 0.3s,color 0.3s; }
+
+/* ── Header ── */
+.header { background:linear-gradient(145deg,#8B1A2F 0%,#B8314F 45%,#7A3000 100%); color:#fff; padding:20px 16px 16px; text-align:center; }
+.header-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.back-to-main { display:inline-flex; align-items:center; gap:5px; color:rgba(255,255,255,0.85); font-size:13px; font-weight:600; text-decoration:none; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.28); padding:6px 12px; border-radius:20px; }
+.back-to-main:hover { background:rgba(255,255,255,0.25); }
+.header-center { flex:1; text-align:center; }
+.header h1 { font-size:20px; font-weight:800; }
+.header p { font-size:13px; opacity:.82; margin-top:3px; }
+.header-spacer { width:80px; }
+
+/* ── HOME GRID ── */
+#home { display:block; }
+.home-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:16px; max-width:600px; margin:0 auto; }
+.cat-card { background:var(--card-bg); border-radius:16px; padding:20px 14px; text-align:center; box-shadow:var(--shadow); cursor:pointer; transition:transform .15s,box-shadow .15s; border:1.5px solid var(--border-color); position:relative; overflow:hidden; -webkit-tap-highlight-color:transparent; }
+.cat-card:active { transform:scale(0.96); }
+.cat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; border-radius:16px 16px 0 0; }
+.cat-1::before { background:var(--blue); }
+.cat-2::before { background:var(--gold); }
+.cat-3::before { background:#7C3AED; }
+.cat-4::before { background:var(--red); }
+.cat-5::before { background:var(--purple); }
+.cat-6::before { background:var(--green); }
+.cat-7::before { background:#D97706; }
+.cat-8::before { background:#374151; }
+.cat-icon { font-size:40px; margin-bottom:10px; display:block; line-height:1; }
+.cat-title { font-size:14px; font-weight:800; color:var(--text); margin-bottom:4px; }
+.cat-desc { font-size:11.5px; color:var(--text-sub); line-height:1.5; }
+
+/* ── SECTION VIEW ── */
+.section-view { display:none; padding:0 16px 80px; max-width:680px; margin:0 auto; }
+.section-view.active { display:block; }
+.sec-back { display:flex; align-items:center; gap:6px; color:var(--red); font-size:14px; font-weight:700; cursor:pointer; padding:14px 0 6px; -webkit-tap-highlight-color:transparent; }
+.sec-back:active { opacity:0.7; }
+.sec-title { font-size:22px; font-weight:800; margin-bottom:4px; color:var(--text); }
+.sec-sub { font-size:13px; color:var(--text-sub); margin-bottom:20px; }
+
+/* ── Cards ── */
+.card { background:var(--card-bg); border-radius:12px; padding:16px 18px; margin-bottom:12px; box-shadow:var(--shadow-sm); border:1px solid var(--border-color); }
+.card-ttl { font-size:15px; font-weight:800; margin-bottom:8px; color:var(--text); }
+.card-sub { font-size:12px; font-weight:700; color:var(--lgray); text-transform:uppercase; letter-spacing:.8px; margin-bottom:10px; }
+.card p, .card li { font-size:13.5px; color:var(--text-sub); line-height:1.75; }
+.card ul, .card ol { padding-left:18px; }
+.card li { margin-bottom:3px; }
+
+/* Section header stripe */
+.sec-stripe { height:4px; border-radius:2px; margin-bottom:18px; }
+.str-blue { background:var(--blue); }
+.str-gold { background:var(--gold); }
+.str-purple { background:#7C3AED; }
+.str-red { background:var(--red); }
+.str-violet { background:var(--purple); }
+.str-green { background:var(--green); }
+.str-orange { background:#D97706; }
+.str-dark { background:#374151; }
+
+/* ── Alert boxes ── */
+.alert { border-radius:10px; padding:13px 15px; margin-bottom:12px; border-left:4px solid; }
+.alert-red { background:#FEF2F2; border-color:var(--red); }
+.alert-gold { background:#FFFBEB; border-color:var(--gold); }
+.alert-green { background:#ECFDF5; border-color:var(--green); }
+.alert-blue { background:#EFF6FF; border-color:#3B82F6; }
+[data-theme="dark"] .alert-red { background:rgba(185,49,79,.12); }
+[data-theme="dark"] .alert-gold { background:rgba(212,144,10,.12); }
+[data-theme="dark"] .alert-green { background:rgba(30,107,69,.12); }
+[data-theme="dark"] .alert-blue { background:rgba(59,130,246,.12); }
+.alert-ttl { font-size:13px; font-weight:800; margin-bottom:4px; }
+.alert-red .alert-ttl { color:#991B1B; }
+.alert-gold .alert-ttl { color:#78350F; }
+.alert-green .alert-ttl { color:#065F46; }
+.alert-blue .alert-ttl { color:#1E40AF; }
+.alert-body { font-size:13px; line-height:1.7; }
+.alert-red .alert-body { color:#7F1D1D; }
+.alert-gold .alert-body { color:#6B3F00; }
+.alert-green .alert-body { color:#064E3B; }
+.alert-blue .alert-body { color:#1E3A8A; }
+[data-theme="dark"] .alert-ttl, [data-theme="dark"] .alert-body { color:var(--text); }
+
+/* ── Row info ── */
+.info-row { display:flex; justify-content:space-between; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--border-color); font-size:13.5px; gap:8px; }
+.info-row:last-child { border-bottom:none; }
+.info-label { color:var(--text-sub); flex-shrink:0; }
+.info-val { font-weight:700; color:var(--text); text-align:right; }
+
+/* ── Flight timeline ── */
+.flight-block { display:flex; align-items:center; gap:0; margin:14px 0; }
+.fl-city { text-align:center; flex:none; }
+.fl-iata { font-size:26px; font-weight:900; color:var(--text); letter-spacing:-1px; }
+.fl-name { font-size:11px; color:var(--lgray); margin-top:2px; }
+.fl-time { font-size:14px; font-weight:800; color:var(--red); margin-top:4px; }
+.fl-date { font-size:11px; color:var(--lgray); }
+.fl-line { flex:1; display:flex; flex-direction:column; align-items:center; margin:0 8px; }
+.fl-dur { font-size:11.5px; color:var(--text-sub); margin-bottom:4px; font-weight:600; }
+.fl-track { width:100%; height:2px; background:var(--border-color); position:relative; }
+.fl-track::after { content:'✈'; position:absolute; right:-4px; top:-9px; font-size:16px; color:var(--red); }
+.fl-stop { font-size:11px; color:var(--gold); margin-top:5px; font-weight:700; }
+
+/* ── Transport options ── */
+.tsp { display:flex; gap:13px; padding:14px 16px; background:var(--card-bg); border-radius:10px; margin-bottom:10px; box-shadow:var(--shadow-sm); border:1px solid var(--border-color); }
+.tsp-icon { font-size:26px; flex:none; width:34px; text-align:center; line-height:1.3; }
+.tsp-title { font-size:14px; font-weight:800; margin-bottom:3px; color:var(--text); }
+.tsp-detail { font-size:13px; color:var(--text-sub); line-height:1.65; }
+.price-tag { display:inline-block; margin-top:6px; font-size:13px; font-weight:800; color:#fff; background:var(--green); padding:3px 10px; border-radius:6px; }
+.price-free { background:var(--blue); }
+
+/* ── Train schedule ── */
+.train-card { background:var(--card-bg); border:2px solid var(--border-color); border-radius:12px; padding:16px 18px; margin-bottom:12px; box-shadow:var(--shadow-sm); }
+.train-card.highlight { border-color:var(--red); }
+.train-route { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.train-city { font-size:18px; font-weight:900; color:var(--text); }
+.train-arrow { color:var(--lgray); font-size:18px; }
+.train-time-row { display:flex; justify-content:space-between; align-items:center; }
+.train-dep, .train-arr { text-align:center; }
+.train-t { font-size:22px; font-weight:900; color:var(--red); }
+.train-d { font-size:11px; color:var(--lgray); }
+.train-mid { text-align:center; }
+.train-dur { font-size:13px; font-weight:700; color:var(--text-sub); }
+.train-type { font-size:11px; color:var(--lgray); }
+
+/* ── Sight cards ── */
+.sight { display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--border-color); }
+.sight:last-child { border-bottom:none; }
+.sight-icon { font-size:28px; flex:none; line-height:1; }
+.sight-name { font-size:14.5px; font-weight:800; margin-bottom:3px; color:var(--text); }
+.sight-detail { font-size:13px; color:var(--text-sub); line-height:1.65; }
+.sight-tag { display:inline-block; margin-top:5px; font-size:11.5px; font-weight:700; color:var(--red); background:#FEF2F2; padding:2px 8px; border-radius:5px; }
+[data-theme="dark"] .sight-tag { background:rgba(185,49,79,.2); color:#F87171; }
+
+/* ── ATM chips ── */
+.bank-chips { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
+.bank-chip { display:flex; align-items:center; gap:5px; padding:7px 13px; border-radius:8px; font-size:13px; font-weight:700; }
+.chip-green { background:#D1FAE5; color:#065F46; }
+.chip-red { background:#FEE2E2; color:#991B1B; }
+[data-theme="dark"] .chip-green { background:rgba(30,107,69,.25); color:#6EE7B7; }
+[data-theme="dark"] .chip-red { background:rgba(185,49,79,.2); color:#F87171; }
+
+/* ── Checklist ── */
+.checklist { list-style:none; }
+.checklist li { display:flex; align-items:flex-start; gap:9px; padding:8px 0; border-bottom:1px solid var(--border-color); font-size:13.5px; color:var(--text-sub); }
+.checklist li:last-child { border-bottom:none; }
+.checklist li::before { content:'☐'; font-size:16px; flex:none; margin-top:1px; color:var(--lgray); }
+
+/* ── App list ── */
+.app-item { display:flex; align-items:center; gap:12px; padding:11px 0; border-bottom:1px solid var(--border-color); }
+.app-item:last-child { border-bottom:none; }
+.app-icon { font-size:28px; flex:none; width:38px; text-align:center; }
+.app-name { font-size:14px; font-weight:800; margin-bottom:2px; color:var(--text); }
+.app-desc { font-size:12.5px; color:var(--text-sub); }
+.badge { font-size:11px; font-weight:700; padding:2px 8px; border-radius:10px; }
+.b-must { background:#FEE2E2; color:#991B1B; }
+.b-nice { background:#DBEAFE; color:#1E40AF; }
+[data-theme="dark"] .b-must { background:rgba(185,49,79,.2); color:#F87171; }
+[data-theme="dark"] .b-nice { background:rgba(59,130,246,.2); color:#93C5FD; }
+
+/* ── Timeline ── */
+.tl { padding:4px 0; }
+.tl-item { display:flex; gap:12px; margin-bottom:4px; }
+.tl-left { flex:none; width:42px; display:flex; flex-direction:column; align-items:center; }
+.tl-dot { width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; flex-shrink:0; }
+.tl-line { flex:1; width:2px; background:var(--border-color); min-height:12px; margin:2px auto; }
+.tl-right { flex:1; padding-bottom:14px; }
+.tl-card { background:var(--card-bg); border-radius:10px; padding:12px 15px; box-shadow:var(--shadow-sm); border:1px solid var(--border-color); }
+.tl-card-ttl { font-size:14px; font-weight:800; margin-bottom:4px; color:var(--text); }
+.tl-card p { font-size:13px; color:var(--text-sub); line-height:1.7; }
+
+/* ── Luggage company ── */
+.lug-card { background:var(--card-bg); border-radius:12px; padding:16px 18px; margin-bottom:12px; border-left:4px solid; box-shadow:var(--shadow-sm); }
+.lug-primary { border-left-color:var(--green); }
+.lug-backup { border-left-color:var(--gold); }
+.lug-badge { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.8px; margin-bottom:6px; }
+.lug-primary .lug-badge { color:var(--green); }
+.lug-backup .lug-badge { color:var(--gold); }
+.lug-name { font-size:16px; font-weight:800; margin-bottom:6px; color:var(--text); }
+.lug-detail { font-size:13px; color:var(--text-sub); line-height:1.7; }
+
+/* ── Laundry table ── */
+.laundry-table { width:100%; border-collapse:collapse; font-size:13px; }
+.laundry-table th { background:var(--light); color:var(--text-sub); font-weight:700; padding:8px 10px; text-align:left; font-size:12px; }
+.laundry-table td { padding:9px 10px; border-bottom:1px solid var(--border-color); color:var(--text); }
+.laundry-table tr:last-child td { border-bottom:none; }
+[data-theme="dark"] .laundry-table th { background:rgba(255,255,255,.07); }
+
+/* ── Responsive ── */
+@media (max-width:380px) {
+  .cat-card { padding:16px 10px; }
+  .cat-icon { font-size:34px; }
+  .cat-title { font-size:13px; }
+  .fl-iata { font-size:22px; }
+  .train-t { font-size:19px; }
+}
+
+/* ── Dark mode toggle ── */
+#theme-toggle { position:fixed; bottom:24px; right:20px; z-index:999; width:44px; height:44px; border-radius:50%; border:2px solid var(--border-color); background:var(--card-bg); cursor:pointer; font-size:20px; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 12px rgba(0,0,0,.2); transition:all .2s; }
+#theme-toggle:hover { transform:scale(1.1); }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="header">
+  <div class="header-top">
+    <a href="index.html" class="back-to-main">← 每日行程</a>
+    <div class="header-spacer"></div>
+  </div>
+  <h1>📖 旅行手冊</h1>
+  <p>Camino de Santiago 2027 · 二人完整指南</p>
+</header>
+
+<!-- ══ HOME ══ -->
+<div id="home">
+  <div class="home-grid">
+    <div class="cat-card cat-1" onclick="showSection('s1')">
+      <span class="cat-icon">✈️</span>
+      <div class="cat-title">機票 & 出入境</div>
+      <div class="cat-desc">去回程航班<br>轉機資訊</div>
+    </div>
+    <div class="cat-card cat-2" onclick="showSection('s2')">
+      <span class="cat-icon">🚕</span>
+      <div class="cat-title">機場 & 馬德里<br>交通</div>
+      <div class="cat-desc">計程車 / 火車<br>市區移動</div>
+    </div>
+    <div class="cat-card cat-3" onclick="showSection('s3')">
+      <span class="cat-icon">🚆</span>
+      <div class="cat-title">高鐵時刻<br>& 購票</div>
+      <div class="cat-desc">馬德里→Sarria<br>Santiago→回程</div>
+    </div>
+    <div class="cat-card cat-4" onclick="showSection('s4')">
+      <span class="cat-icon">🏙️</span>
+      <div class="cat-title">馬德里行程</div>
+      <div class="cat-desc">Day 2 景點<br>走路路線</div>
+    </div>
+    <div class="cat-card cat-5" onclick="showSection('s5')">
+      <span class="cat-icon">⛪</span>
+      <div class="cat-title">聖地亞哥</div>
+      <div class="cat-desc">朝聖辦公室<br>大教堂 · Finisterre</div>
+    </div>
+    <div class="cat-card cat-6" onclick="showSection('s6')">
+      <span class="cat-icon">💰</span>
+      <div class="cat-title">ATM & 金錢</div>
+      <div class="cat-desc">哪家銀行安全<br>預算規劃</div>
+    </div>
+    <div class="cat-card cat-7" onclick="showSection('s7')">
+      <span class="cat-icon">🎒</span>
+      <div class="cat-title">行李托運</div>
+      <div class="cat-desc">Pilbeo / CaminoFácil<br>預約方法</div>
+    </div>
+    <div class="cat-card cat-8" onclick="showSection('s8')">
+      <span class="cat-icon">📋</span>
+      <div class="cat-title">準備 & 裝備</div>
+      <div class="cat-desc">訂票時間軸<br>App清單 · 裝備</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  S1：機票 & 出入境
+══════════════════════════════════════ -->
+<div id="s1" class="section-view">
+  <div class="sec-back" onclick="showHome()">← 返回手冊首頁</div>
+  <div class="sec-stripe str-blue"></div>
+  <div class="sec-title">✈️ 機票 & 出入境</div>
+  <div class="sec-sub">去回程班機資訊 · 轉機注意事項</div>
+
+  <div class="card">
+    <div class="card-sub">去程 — 6月1日出發</div>
+    <div class="flight-block">
+      <div class="fl-city">
+        <div class="fl-iata">TPE</div>
+        <div class="fl-name">台灣桃園</div>
+        <div class="fl-time">23:05</div>
+        <div class="fl-date">6/1（一）</div>
+      </div>
+      <div class="fl-line">
+        <div class="fl-dur">~16hr</div>
+        <div class="fl-track"></div>
+        <div class="fl-stop">轉杜拜 DXB</div>
+      </div>
+      <div class="fl-city">
+        <div class="fl-iata">MAD</div>
+        <div class="fl-name">馬德里</div>
+        <div class="fl-time">13:30</div>
+        <div class="fl-date">6/2（二）</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <span class="info-label">抵達機場</span>
+      <span class="info-val">Adolfo Suárez Madrid–Barajas T4</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">轉機地點</span>
+      <span class="info-val">杜拜 Dubai DXB</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-sub">回程 — 6月15日出發</div>
+    <div class="flight-block">
+      <div class="fl-city">
+        <div class="fl-iata">MAD</div>
+        <div class="fl-name">馬德里</div>
+        <div class="fl-time">15:25</div>
+        <div class="fl-date">6/15（日）</div>
+      </div>
+      <div class="fl-line">
+        <div class="fl-dur">~16hr</div>
+        <div class="fl-track"></div>
+        <div class="fl-stop">轉杜拜 DXB</div>
+      </div>
+      <div class="fl-city">
+        <div class="fl-iata">TPE</div>
+        <div class="fl-name">台灣桃園</div>
+        <div class="fl-time">隔日</div>
+        <div class="fl-date">6/16（一）</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <span class="info-label">出發機場</span>
+      <span class="info-val">Madrid–Barajas T4（出發T4S）</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">前一晚住宿</span>
+      <span class="info-val">馬德里市區旅館</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">建議到機場時間</span>
+      <span class="info-val">13:00 以前（起飛前2.5hr）</span>
+    </div>
+  </div>
+
+  <div class="alert alert-gold">
+    <div class="alert-ttl">⚠️ 轉機注意</div>
+    <div class="alert-body">杜拜轉機若需過安檢，液體須放透明袋（100ml以下）。去程深夜出發，建議機場早1.5hr到達。</div>
+  </div>
+
+  <div class="alert alert-blue">
+    <div class="alert-ttl">📋 出入境提醒</div>
+    <div class="alert-body">西班牙為申根區，台灣護照免簽90天。回程若中途停留杜拜機場不出境，無需簽證。機票確認碼、旅館訂單各印一份備用。</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  S2：機場 & 馬德里交通
+══════════════════════════════════════ -->
+<div id="s2" class="section-view">
+  <div class="sec-back" onclick="showHome()">← 返回手冊首頁</div>
+  <div class="sec-stripe str-gold"></div>
+  <div class="sec-title">🚕 機場 & 馬德里交通</div>
+  <div class="sec-sub">Barajas 機場到市區 · Day2 市內移動</div>
+
+  <div class="card">
+    <div class="card-ttl">機場 → 市區（抵達當天）</div>
+    <div class="card-sub">三種選擇</div>
+  </div>
+
+  <div class="tsp">
+    <div class="tsp-icon">🚕</div>
+    <div>
+      <div class="tsp-title">計程車（推薦）</div>
+      <div class="tsp-detail">固定費率 <strong>€33</strong> 到馬德里市中心。不用殺價、有冷氣、行李直接上。行李多時最方便。<br>上車前確認司機按表跳，或直接說「M-30 以內 €33 固定費」。</div>
+      <span class="price-tag">€33 固定</span>
+    </div>
+  </div>
+
+  <div class="tsp">
+    <div class="tsp-icon">🚂</div>
+    <div>
+      <div class="tsp-title">Cercanías 火車 C-1線</div>
+      <div class="tsp-detail">T4 地下樓層 → Atocha / Chamartín，約35分鐘。省錢但需拖行李上下樓梯，深夜班次少。去程抵達時間為13:30，班次正常。</div>
+      <span class="price-tag">€2.60／人</span>
+    </div>
+  </div>
+
+  <div class="tsp">
+    <div class="tsp-icon">🚇</div>
+    <div>
+      <div class="tsp-title">地鐵 8號線（不建議）</div>
+      <div class="tsp-detail">需買 <strong>€3 機場補票</strong>（Suplemento Aeropuerto）才能上車，加上地鐵票共約€6。轉換複雜，行李不方便。</div>
+      <span class="price-tag">€6+ ／人</span>
+    </div>
+  </div>
+
+  <div class="tsp">
+    <div class="tsp-icon">🚌</div>
+    <div>
+      <div class="tsp-title">Exprés Aeropuerto 機場快線巴士</div>
+      <div class="tsp-detail">到 Atocha / O'Donnell。24小時運行，深夜回程可用。但兩人含行李推薦計程車更方便。</div>
+      <span class="price-tag">€5 ／人</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:8px">
+    <div class="card-ttl">馬德里市內 — Combinado 免費換乘</div>
+    <div class="card-sub">Day2 觀光</div>
+    <p>購買地鐵10次票（<strong>Tarjeta Multi €12.20</strong>）可在地鐵、公車、輕軌間 75分鐘免費換乘（Combinado）。觀光景點密集，大多步行可達，地鐵輔助即可。</p>
+  </div>
+
+  <div class="alert alert-green">
+    <div class="alert-ttl">✅ 建議</div>
+    <div class="alert-body">去程抵達 13:30，直接搭計程車 €33 到旅館，放下行李休息。Day2 觀光用地鐵10次票 + 步行。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">馬德里 → Atocha 車站</div>
+    <div class="card-sub">出發去 Sarria 那天</div>
+    <div class="info-row">
+      <span class="info-label">建議交通</span>
+      <span class="info-val">地鐵 or 計程車</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">到站目標</span>
+      <span class="info-val">Puerta de Atocha 站</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">建議出發</span>
+      <span class="info-val">高鐵前 60–75分鐘</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  S3：高鐵時刻 & 購票
+══════════════════════════════════════ -->
+<div id="s3" class="section-view">
+  <div class="sec-back" onclick="showHome()">← 返回手冊首頁</div>
+  <div class="sec-stripe str-purple"></div>
+  <div class="sec-title">🚆 高鐵時刻 & 購票</div>
+  <div class="sec-sub">Renfe AVE/Alvia 班次 · 官網訂票指南</div>
+
+  <div class="alert alert-red">
+    <div class="alert-ttl">🔴 重要：唯一直達班次</div>
+    <div class="alert-body">馬德里 → Sarria 每日只有 1 班直達 Alvia，<strong>非常容易賣完</strong>。請提早 60 天（Renfe 開放最早時間）搶票。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-sub">去程 — 6月3日</div>
+    <div class="train-card highlight" style="border:none;padding:0;background:transparent;box-shadow:none;">
+      <div class="train-route">
+        <div class="train-city">Madrid</div>
+        <div class="train-arrow">→</div>
+        <div class="train-city">Sarria</div>
+      </div>
+      <div class="train-time-row">
+        <div class="train-dep">
+          <div class="train-t">13:20</div>
+          <div class="train-d">Puerta de Atocha</div>
+        </div>
+        <div class="train-mid">
+          <div class="train-dur">4h 12m</div>
+          <div class="train-type">Alvia 直達</div>
+        </div>
+        <div class="train-arr">
+          <div class="train-t">17:32</div>
+          <div class="train-d">Sarria</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row" style="margin-top:10px">
+      <span class="info-label">車種</span>
+      <span class="info-val">Alvia（高速傾斜列車）</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">每日班數</span>
+      <span class="info-val">⚠️ 僅1班直達</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">建議票種</span>
+      <span class="info-val">Turista（2等）€50–70/人</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-sub">回程 — 6月14日（Santiago → Madrid）</div>
+    <div class="train-card" style="border:none;padding:0;background:transparent;box-shadow:none;">
+      <div class="train-route">
+        <div class="train-city">Santiago</div>
+        <div class="train-arrow">→</div>
+        <div class="train-city">Madrid</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--text-sub);margin:8px 0 12px">Santiago de Compostela → Madrid 有多班 AVE，選 15:00 前到馬德里，方便當天在市區吃晚餐。</p>
+    <div class="info-row">
+      <span class="info-label">建議班次</span>
+      <span class="info-val">12:xx–16:xx（約4h）</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">出發站</span>
+      <span class="info-val">Santiago de Compostela</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">抵達站</span>
+      <span class="info-val">Madrid Puerta de Atocha</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">Renfe 購票步驟</div>
+    <ol class="card">
+      <li style="border:none;padding:3px 0">前往 <strong>renfe.com</strong>（或 App「Renfe Viajeros」）</li>
+      <li style="border:none;padding:3px 0">選擇 Origen / Destino / Fecha</li>
+      <li style="border:none;padding:3px 0">選 <strong>Alvia</strong> 班次，票種選 <strong>Turista（2等）</strong></li>
+      <li style="border:none;padding:3px 0">信用卡付款（Visa/MC 均可）</li>
+      <li style="border:none;padding:3px 0">下載 PDF 車票存手機 → 加入 Apple Wallet</li>
+    </ol>
+  </div>
+
+  <div class="alert alert-gold">
+    <div class="alert-ttl">💡 購票時間提示</div>
+    <div class="alert-body">Renfe 最早開賣：出發日前 <strong>60天</strong>。建議設鬧鐘在 4月4日（6/3 的60天前）上午準時搶票。Sarria 直達票特別搶手，2027 聖年人潮更多。</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  S4：馬德里行程 Day2
+══════════════════════════════════════ -->
+<div id="s4" class="section-view">
+  <div class="sec-back" onclick="showHome()">← 返回手冊首頁</div>
+  <div class="sec-stripe str-red"></div>
+  <div class="sec-title">🏙️ 馬德里行程</div>
+  <div class="sec-sub">Day 2（6月2日抵達 / 6月3日出發前上午）</div>
+
+  <div class="alert alert-blue">
+    <div class="alert-ttl">📅 時間分配</div>
+    <div class="alert-body">6/2 抵達 13:30，check-in 後輕鬆逛。6/3 上午可再加一個景點，12:00 前出發去 Atocha 搭 13:20 高鐵。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">Day 2 精華路線（步行約3–4km）</div>
+    <div class="card-sub">從太陽門出發，可自由延伸</div>
+    <div class="sight">
+      <div class="sight-icon">🌞</div>
+      <div>
+        <div class="sight-name">太陽門 Puerta del Sol</div>
+        <div class="sight-detail">馬德里地理中心，公里0起點。可買熊抱草莓雕像紀念品，人潮密集注意扒手。</div>
+        <span class="sight-tag">免費</span>
+      </div>
+    </div>
+    <div class="sight">
+      <div class="sight-icon">🏛️</div>
+      <div>
+        <div class="sight-name">主廣場 Plaza Mayor</div>
+        <div class="sight-detail">巴洛克式廣場，四周咖啡廳。早上光線最美。廣場內露天座位較貴，建議往旁邊小巷找較實惠餐廳。</div>
+        <span class="sight-tag">免費入場</span>
+      </div>
+    </div>
+    <div class="sight">
+      <div class="sight-icon">🧀</div>
+      <div>
+        <div class="sight-name">聖米格爾市場 Mercado de San Miguel</div>
+        <div class="sight-detail">主廣場旁精緻美食市場，各種西班牙小吃 Pintxos、伊比利火腿、海鮮等。午餐邊逛邊吃，每份約€2–5。</div>
+        <span class="sight-tag">免費入場・週一–日</span>
+      </div>
+    </div>
+    <div class="sight">
+      <div class="sight-icon">👑</div>
+      <div>
+        <div class="sight-name">王宮外圍 Palacio Real</div>
+        <div class="sight-detail">歐洲最大王宮之一，外觀宏偉。若時間不夠可只看外牆與廣場，面向薩巴提尼花園拍照。內部參觀需€14，建議可跳過。</div>
+        <span class="sight-tag">外觀免費・內部€14</span>
+      </div>
+    </div>
+    <div class="sight" style="border:none">
+      <div class="sight-icon">🌿</div>
+      <div>
+        <div class="sight-name">麗池公園 El Retiro（可選）</div>
+        <div class="sight-detail">馬德里最大公園，划船湖、玻璃宮。若腳力夠可繞30分鐘。距離主廣場約20分鐘步行。</div>
+        <span class="sight-tag">免費</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">🍽 用餐推薦</div>
+    <div class="info-row">
+      <span class="info-label">午餐</span>
+      <span class="info-val">聖米格爾市場小吃</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">晚餐</span>
+      <span class="info-val">Sobrino de Botín（世界最古老餐廳）或Chueca區餐廳</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">早餐（6/3）</span>
+      <span class="info-val">旅館附近咖啡廳 Churros con Chocolate</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  S5：聖地亞哥
+══════════════════════════════════════ -->
+<div id="s5" class="section-view">
+  <div class="sec-back" onclick="showHome()">← 返回手冊首頁</div>
+  <div class="sec-stripe str-violet"></div>
+  <div class="sec-title">⛪ 聖地亞哥</div>
+  <div class="sec-sub">Day 11–14（6月12–15日）· 朝聖終點儀式</div>
+
+  <div class="alert alert-red">
+    <div class="alert-ttl">✝️ 朝聖辦公室 · 取得 Compostela</div>
+    <div class="alert-body">
+      <strong>地址：Rúa de Carretas 33</strong>（大教堂廣場旁）<br>
+      開放：08:00–21:00（旺季無休）<br>
+      帶齊：護照 + Credencial（朝聖者護照，每站蓋章）<br>
+      排隊：聖年旺季建議 07:30 前到，避開隊伍高峰
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">大教堂 Catedral de Santiago</div>
+    <div class="info-row">
+      <span class="info-label">朝聖者彌撒</span>
+      <span class="info-val">每日 19:30（主要場次）</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">其他彌撒</span>
+      <span class="info-val">09:30 / 12:00 / 19:30</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">抱聖雅各像</span>
+      <span class="info-val">彌撒前後，祭壇後方走道進入</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Botafumeiro</span>
+      <span class="info-val">特定彌撒才有（聖年更頻繁）</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">🏨 旅館 → 車站（步行）</div>
+    <div class="info-row">
+      <span class="info-label">距離</span>
+      <span class="info-val">約 750m</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">步行時間</span>
+      <span class="info-val">約 10 分鐘</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">車站</span>
+      <span class="info-val">Santiago de Compostela 火車站</span>
+    </div>
+    <p style="font-size:13px;color:var(--text-sub);margin-top:10px">行李建議 check-out 後寄存車站（ €3–5/件），輕鬆再逛半天再搭車。</p>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">🌊 Finisterre 一日遊（可選）</div>
+    <div class="info-row">
+      <span class="info-label">距離</span>
+      <span class="info-val">Santiago → Finisterre 約 90km</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">交通</span>
+      <span class="info-val">Monbus/ALSA 巴士 約2.5hr</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">巴士費</span>
+      <span class="info-val">約€7–9 單程</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">傳統</span>
+      <span class="info-val">在燈塔 Km 0.00 石碑拍照 · 焚燒舊衣</span>
+    </div>
+    <p style="font-size:13px;color:var(--text-sub);margin-top:10px">建議安排在 6/13（抵達後第二天），當天來回，傍晚看日落再搭巴士回城。</p>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">📍 實用地點</div>
+    <div class="info-row">
+      <span class="info-label">大教堂廣場</span>
+      <span class="info-val">Praza do Obradoiro</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">朝聖辦公室</span>
+      <span class="info-val">Rúa de Carretas 33</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">紀念品街</span>
+      <span class="info-val">Rúa do Franco / Rúa da Raíña</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">章魚名店</span>
+      <span class="info-val">A Pulpería de Melide（Melide 鎮）</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  S6：ATM & 金錢
+══════════════════════════════════════ -->
+<div id="s6" class="section-view">
+  <div class="sec-back" onclick="showHome()">← 返回手冊首頁</div>
+  <div class="sec-stripe str-green"></div>
+  <div class="sec-title">💰 ATM & 金錢</div>
+  <div class="sec-sub">安全提款 · 預算規劃 · 信用卡建議</div>
+
+  <div class="alert alert-red">
+    <div class="alert-ttl">🚫 絕對避免 Euronet ATM</div>
+    <div class="alert-body">Euronet 是私人 ATM，手續費極高（每筆 €5–8+），並會在轉換率上偷收費。外觀顯眼，常見觀光區，務必跳過。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">推薦使用的西班牙銀行 ATM</div>
+    <div class="bank-chips">
+      <span class="bank-chip chip-green">✅ Santander</span>
+      <span class="bank-chip chip-green">✅ CaixaBank</span>
+      <span class="bank-chip chip-green">✅ BBVA</span>
+      <span class="bank-chip chip-red">🚫 Euronet</span>
+      <span class="bank-chip chip-red">🚫 Cardtronics</span>
+    </div>
+    <p style="font-size:13px;color:var(--text-sub);margin-top:10px">選擇「扣除台幣」（本國貨幣計費）而非當地換算（DCC），避免動態貨幣轉換費用。ATM 問「是否以台幣計算」→ 選 <strong>否（No / Decline）</strong>。</p>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">💶 預算參考（兩人 15 天）</div>
+    <div class="info-row">
+      <span class="info-label">現金需求總計</span>
+      <span class="info-val"><strong>€500–550</strong></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">每日現金</span>
+      <span class="info-val">€30–40 / 人（餐飲小費蓋章費用）</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">行李托運</span>
+      <span class="info-val">€10–15 / 次（共約€50–80）</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">朝聖者護照 Credencial</span>
+      <span class="info-val">€2–3（出發前在台購買或Sarria取得）</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Compostela 正本（羊皮紙版）</span>
+      <span class="info-val">€7（可選）</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">💳 信用卡建議</div>
+    <ul class="card">
+      <li>帶 <strong>2張不同銀行</strong>（Visa + Mastercard）以防其一被擋</li>
+      <li>旅館/大餐廳刷卡，小餐廳/酒吧現金</li>
+      <li>機場、高鐵購票：信用卡為主</li>
+      <li>通知銀行出發日期，避免海外消費被凍結</li>
+    </ul>
+  </div>
+
+  <div class="alert alert-gold">
+    <div class="alert-ttl">💡 提款技巧</div>
+    <div class="alert-body">Sarria 鎮的 ATM 在假日可能缺鈔，建議在馬德里就備好足夠現金（€200–250）。沿途小村莊 ATM 少，Porto Marín / Palas de Rei 有 ATM。</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  S7：行李托運
+══════════════════════════════════════ -->
+<div id="s7" class="section-view">
+  <div class="sec-back" onclick="showHome()">← 返回手冊首頁</div>
+  <div class="sec-stripe str-orange"></div>
+  <div class="sec-title">🎒 行李托運</div>
+  <div class="sec-sub">Pilbeo 優先 · CaminoFácil 備用 · 操作指南</div>
+
+  <div class="alert alert-green">
+    <div class="alert-ttl">✅ 行李托運是什麼？</div>
+    <div class="alert-body">每天早上出發前，托運業者將你的背包從當晚旅館送到隔日旅館，讓你輕裝健行。每件約 €6–10，是非常值得的投資。</div>
+  </div>
+
+  <div class="lug-card lug-primary">
+    <div class="lug-badge">★ 首選</div>
+    <div class="lug-name">Pilbeo</div>
+    <div class="lug-detail">
+      <strong>重量限制：20 kg /件</strong><br>
+      App 預約（iOS/Android），在 App 內收取行李到達通知。<br>
+      下載「Pilbeo」App → 選起訖點 → 當天07:00前把行李放旅館門口。<br>
+      費用：€7–9/件/天
+    </div>
+  </div>
+
+  <div class="lug-card lug-backup">
+    <div class="lug-badge">備用</div>
+    <div class="lug-name">CaminoFácil</div>
+    <div class="lug-detail">
+      若 Pilbeo 無法服務該段（偏遠村莊），改用 CaminoFácil。<br>
+      可在官網或電話預約，部分旅館可協助聯繫。<br>
+      費用：€6–8/件/天
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">📋 使用流程</div>
+    <ol class="card">
+      <li>前一晚 App 下單，輸入當日起點旅館 + 目的地旅館</li>
+      <li>早上 07:00 前將行李掛上 <strong>標籤</strong>（App 列印或手寫）放旅館前台</li>
+      <li>輕裝出發健行</li>
+      <li>抵達新旅館時，行李已在房內或前台等候</li>
+      <li>App 收到到達通知</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">📌 注意事項</div>
+    <ul class="card">
+      <li>貴重物品（護照/藥品/雨衣）放隨身小包，不托運</li>
+      <li>聖年人潮多，建議提早一天預約（別當天才訂）</li>
+      <li>O Cebreiro 那段山路可考慮自己揹（短，但風景美）</li>
+      <li>如旅館無法配合托運，可請前台轉介當地業者</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  S8：準備 & 裝備
+══════════════════════════════════════ -->
+<div id="s8" class="section-view">
+  <div class="sec-back" onclick="showHome()">← 返回手冊首頁</div>
+  <div class="sec-stripe str-dark"></div>
+  <div class="sec-title">📋 準備 & 裝備</div>
+  <div class="sec-sub">訂票時間軸 · App 清單 · 裝備建議</div>
+
+  <div class="card">
+    <div class="card-ttl">📅 訂票時間軸（出發前）</div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot" style="background:#6366F1">✈</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <div class="tl-card-ttl">即刻（若未完成）</div>
+            <p>訂機票（TPE–DXB–MAD 去回程）、訂馬德里旅館（6/2–3）、訂Santiago旅館（6/12–14）</p>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot" style="background:#B8314F">4月</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <div class="tl-card-ttl">4月4日 ← 搶票鬧鐘</div>
+            <p>Renfe 開放 6/3 班次購票（60天前）。立刻搶馬德里→Sarria Alvia 13:20 班</p>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot" style="background:#1E6B45">Sarria</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <div class="tl-card-ttl">訂 Camino 沿途旅館</div>
+            <p>Sarria / Portomarin / Palas de Rei / Arzúa / O Pedrouzo / Santiago。聖年旺季建議出發前2–3個月全訂好。</p>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot" style="background:#0891B2">1週前</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <div class="tl-card-ttl">出發前最後確認</div>
+            <p>下載 Pilbeo App 並設定、下載離線地圖（Wikiloc）、通知銀行出國日期、健保卡影本、確認護照有效期超過6個月</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">📱 必備 App 清單</div>
+    <div class="app-item">
+      <div class="app-icon">🐚</div>
+      <div>
+        <div class="app-name">Buen Camino <span class="badge b-must">必裝</span></div>
+        <div class="app-desc">朝聖路線導航、庇護所資訊、海拔圖、離線可用</div>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-icon">🗺️</div>
+      <div>
+        <div class="app-name">Wikiloc <span class="badge b-must">必裝</span></div>
+        <div class="app-desc">GPS 軌跡地圖，下載 Camino Francés 離線軌跡</div>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-icon">🧳</div>
+      <div>
+        <div class="app-name">Pilbeo <span class="badge b-must">必裝</span></div>
+        <div class="app-desc">行李托運預約、追蹤、到達通知</div>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-icon">🚂</div>
+      <div>
+        <div class="app-name">Renfe Viajeros <span class="badge b-must">必裝</span></div>
+        <div class="app-desc">高鐵電子票、班次查詢</div>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-icon">🌤️</div>
+      <div>
+        <div class="app-name">Weather Pro / AEMET <span class="badge b-nice">建議</span></div>
+        <div class="app-desc">西班牙氣象局 App，加利西亞地區天氣預報</div>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-icon">🏨</div>
+      <div>
+        <div class="app-name">Booking.com / Airbnb <span class="badge b-nice">建議</span></div>
+        <div class="app-desc">查詢住宿備用（主要提前訂好）</div>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-icon">💱</div>
+      <div>
+        <div class="app-name">Wise <span class="badge b-nice">建議</span></div>
+        <div class="app-desc">免換匯手續費刷卡，ATM 提款費率優惠</div>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-icon">📞</div>
+      <div>
+        <div class="app-name">Google Translate（離線下載西班牙語）<span class="badge b-nice">建議</span></div>
+        <div class="app-desc">相機翻譯菜單，沿途小村莊英語少</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">👟 鞋襪選擇（重要）</div>
+    <ul class="card">
+      <li><strong>步行鞋</strong>：低筒防水健行鞋（如 Salomon / Merrell Moab），比登山靴輕，比跑鞋穩</li>
+      <li><strong>絕對不要</strong>：新鞋出發（出發前至少穿滿200km磨合）</li>
+      <li><strong>襪子</strong>：Darn Tough 或 Smartwool 美麗諾羊毛，每天換洗減少水泡</li>
+      <li><strong>備用涼鞋</strong>：Birkenstocks 或 Teva，晚上讓腳透氣，抵達後必穿</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">🧴 穿著建議（排汗速乾）</div>
+    <ul class="card">
+      <li>上衣：排汗T恤×3（羊毛或化纖），每天洗1件</li>
+      <li>褲：快乾長褲×1 + 短褲×1（可拆卸更好）</li>
+      <li>雨衣 Poncho：Camino 必備，加利西亞多霧雨</li>
+      <li>保暖層：輕薄羽絨 or 刷毛（早晨出發時冷）</li>
+      <li>帽子、墨鏡、防曬：梅塞塔平原段日曬強烈</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-ttl">🧺 沿途洗衣店</div>
+    <table class="laundry-table">
+      <tr><th>城鎮</th><th>洗衣店</th><th>備注</th></tr>
+      <tr><td>Sarria</td><td>Casa igrexa 附近多家</td><td>自助約€4/次</td></tr>
+      <tr><td>Portomarín</td><td>旅館通常有投幣洗衣</td><td>—</td></tr>
+      <tr><td>Melide</td><td>市區有洗衣店</td><td>含烘乾約€8</td></tr>
+      <tr><td>Arzúa</td><td>旅館附設</td><td>—</td></tr>
+      <tr><td>Santiago</td><td>Lavandería自助洗衣多</td><td>€4+€2烘</td></tr>
+    </table>
+    <p style="font-size:12.5px;color:var(--text-sub);margin-top:10px">Tips：快乾衣物當晚手洗掛乾即可，減少送洗需求。沐浴乳兼當洗衣液很方便。</p>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer style="background:var(--card-bg);border-top:1px solid var(--border-color);text-align:center;padding:20px 16px;margin-top:20px;font-size:13px;color:var(--text-sub);">
+  <a href="index.html" style="color:var(--red);font-weight:700;text-decoration:none;">← 每日行程 index.html</a>
+  <span style="margin:0 10px;color:var(--border-color)">|</span>
+  <span>2027 聖年朝聖之路 · 二人慢走攻略</span>
+</footer>
+
+<!-- ══ 深色/淺色切換 ══ -->
+<button id="theme-toggle" onclick="toggleTheme()" title="切換深色/淺色">🌙</button>
+
+<script>
+function showSection(id) {
+  document.getElementById('home').style.display = 'none';
+  document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function showHome() {
+  document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+  document.getElementById('home').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+// Dark mode
+const toggle = document.getElementById('theme-toggle');
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  toggle.textContent = t === 'dark' ? '☀️' : '🌙';
+}
+function toggleTheme() {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  localStorage.setItem('camino-theme', next);
+}
+(function() {
+  const saved = localStorage.getItem('camino-theme');
+  if (saved) applyTheme(saved);
+})();
+</script>
+</body>
+</html>
